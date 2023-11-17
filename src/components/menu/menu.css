@@ -1,0 +1,18 @@
+.active {
+  color: rgb(51, 28, 88);
+}
+
+nav {
+  display: inline-flex;
+}
+
+nav a {
+  font-size: 35px;
+  color: #513b7e69;
+  margin: 20px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #3d3f44be;
+}
