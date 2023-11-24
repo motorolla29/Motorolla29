@@ -3,18 +3,7 @@ import React, { useEffect, useRef } from 'react';
 const StarsCanvas = (props) => {
   const ref = useRef();
 
-  const colorArray = [
-    '#4c1a22',
-    '#4c1a23',
-    '#5d6268',
-    '#1f2e37',
-    '#474848',
-    '#542619',
-    '#ead8cf',
-    '#4c241f',
-    '#d6b9b1',
-    '#964a47',
-  ];
+  const colorArray = ['#fcf8f7', '#a39693', '#f2f0d8', '#5e5e5c', '#21211f'];
   const mouseDistance = 50;
   const radius = 0.5;
   const maxRadius = 1.5;
@@ -24,26 +13,12 @@ const StarsCanvas = (props) => {
     y: undefined,
   };
 
-  const handleMouseMovement = function (evt) {
-    mouse.x = evt.x;
-    mouse.y = evt.y;
-  };
-
-  const handleResizeWindow = function (canvas) {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    window.removeEventListener('resize', handleResizeWindow);
-  };
-
   useEffect(() => {
     const canvas = ref.current;
     const context = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     canvas.style.display = 'block';
-
-    window.addEventListener('resize', (evt) => handleResizeWindow(canvas));
-    window.addEventListener('mousemove', handleMouseMovement);
 
     let animationID;
 
@@ -92,7 +67,7 @@ const StarsCanvas = (props) => {
     }
 
     const prepare = () => {
-      for (let i = 0; i < 500; i++) {
+      for (let i = 0; i < 100; i++) {
         const x = Math.random() * (canvas.width - radius * 2) + radius;
         const y = Math.random() * (canvas.height - radius * 2) + radius;
         const dx = (Math.random() - 0.2) * 0.2;
@@ -116,7 +91,23 @@ const StarsCanvas = (props) => {
     prepare();
     animate();
 
-    return () => window.cancelAnimationFrame(animationID);
+    const handleMouseMovement = function (e) {
+      mouse.x = e.x;
+      mouse.y = e.y;
+    };
+
+    const handleResizeWindow = function () {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    window.addEventListener('resize', handleResizeWindow);
+    window.addEventListener('mousemove', handleMouseMovement);
+
+    return () => {
+      cancelAnimationFrame(animationID);
+      window.removeEventListener('resize', handleResizeWindow);
+      window.removeEventListener('mousemove', handleMouseMovement);
+    };
   });
 
   return <canvas ref={ref} {...props} />;

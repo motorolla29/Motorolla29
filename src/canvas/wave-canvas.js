@@ -3,17 +3,17 @@ import React, { useEffect, useRef } from 'react';
 const WaveCanvas = (props) => {
   const ref = useRef();
 
-  var txt = function (canvas, context) {
-    const _t = 'Frontend'.split('').join(String.fromCharCode(0x2001));
-    context.font = 'comic sans';
-    context.fillStyle = 'rgb(100, 2, 323)';
-    context.fillText(
-      _t,
-      (canvas.width - context.measureText(_t).width) * 0.5,
-      canvas.height * 0.5
-    );
-    return _t;
-  };
+  // var txt = function (canvas, context) {
+  //   const _t = 'Frontend'.split('').join(String.fromCharCode(0x2001));
+  //   context.font = 'comic sans';
+  //   context.fillStyle = 'rgb(100, 2, 323)';
+  //   context.fillText(
+  //     _t,
+  //     (canvas.width - context.measureText(_t).width) * 0.5,
+  //     canvas.height * 0.5
+  //   );
+  //   return _t;
+  // };
 
   const draw = function (canvas, context, t) {
     let w = (canvas.width = window.innerWidth);
@@ -42,20 +42,21 @@ const WaveCanvas = (props) => {
   useEffect(() => {
     const canvas = ref.current;
     const context = canvas.getContext('2d');
-    let t = 0;
+
     let animationID;
+    let t = 0;
 
     const run = function () {
-      animationID = window.requestAnimationFrame(run);
+      animationID = requestAnimationFrame(run);
       t += 0.2;
       draw(canvas, context, t);
-      txt(canvas, context);
+      // txt(canvas, context);
     };
 
     run();
 
-    return () => window.cancelAnimationFrame(animationID);
-  }, []);
+    return () => cancelAnimationFrame(animationID);
+  });
 
   return <canvas ref={ref} {...props} />;
 };

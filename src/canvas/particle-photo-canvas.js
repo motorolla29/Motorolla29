@@ -1,14 +1,15 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import image from '../images/Layer1.png';
 
 const ParticlePhotoCanvas = (props) => {
   const ref = useRef();
   let renderer;
+  let animationID;
 
   const centerVector = new THREE.Vector3(0, 0, 0);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const canvas = ref.current;
 
     let scene,
@@ -91,7 +92,8 @@ const ParticlePhotoCanvas = (props) => {
     };
 
     const render = function () {
-      requestAnimationFrame(render);
+      console.log('render');
+      animationID = requestAnimationFrame(render);
       particles.geometry.verticesNeedUpdate = true;
       if (!isMouseDown) {
         camera.position.x += (0 - camera.position.x) * 0.06;
@@ -145,6 +147,11 @@ const ParticlePhotoCanvas = (props) => {
     window.addEventListener('mousedown', onMousedown, false);
     window.addEventListener('mouseup', onMouseup, false);
     window.addEventListener('resize', onResize, false);
+
+    return () => {
+      console.log('returned');
+      cancelAnimationFrame(animationID);
+    };
   });
 
   return <canvas ref={ref} {...props} />;
