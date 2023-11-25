@@ -121,11 +121,13 @@ const TextParticlesCanvas = () => {
     };
 
     const onResizeDebouncedHandler = debounce(() => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      effect = new Effect(canvas.width, canvas.height);
-      effect.wrapText(ctx);
-    }, 1500);
+      if (canvas.width !== window.innerWidth) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        effect = new Effect(canvas.width, canvas.height);
+        effect.wrapText(ctx);
+      }
+    }, 500);
 
     window.addEventListener('mousemove', onMousemoveHandler);
     window.addEventListener('resize', onResizeDebouncedHandler);

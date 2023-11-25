@@ -4,9 +4,8 @@ import image from '../images/Layer1.png';
 
 const ParticlePhotoCanvas = (props) => {
   const ref = useRef();
+  let animations = [];
   let renderer;
-  let animationID;
-
   const centerVector = new THREE.Vector3(0, 0, 0);
 
   useEffect(() => {
@@ -92,8 +91,6 @@ const ParticlePhotoCanvas = (props) => {
     };
 
     const render = function () {
-      console.log('render');
-      animationID = requestAnimationFrame(render);
       particles.geometry.verticesNeedUpdate = true;
       if (!isMouseDown) {
         camera.position.x += (0 - camera.position.x) * 0.06;
@@ -102,6 +99,7 @@ const ParticlePhotoCanvas = (props) => {
       }
 
       renderer.render(scene, camera);
+      animations.push(requestAnimationFrame(render));
     };
 
     renderer = new THREE.WebGLRenderer({
@@ -142,15 +140,19 @@ const ParticlePhotoCanvas = (props) => {
       drawTheMap(imagedata);
       render();
     };
-
     window.addEventListener('mousemove', onMousemove, false);
     window.addEventListener('mousedown', onMousedown, false);
     window.addEventListener('mouseup', onMouseup, false);
     window.addEventListener('resize', onResize, false);
 
     return () => {
-      console.log('returned');
-      cancelAnimationFrame(animationID);
+      animations.forEach((a) => {
+        cancelAnimationFrame(a);
+      });
+      window.removeEventListener('mousemove', onMousemove, false);
+      window.removeEventListener('mousedown', onMousedown, false);
+      window.removeEventListener('mouseup', onMouseup, false);
+      window.removeEventListener('resize', onResize, false);
     };
   });
 
