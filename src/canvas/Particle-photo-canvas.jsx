@@ -93,8 +93,8 @@ const ParticlePhotoCanvas = (props) => {
     const render = function () {
       particles.geometry.verticesNeedUpdate = true;
       if (!isMouseDown) {
-        camera.position.x += (0 - camera.position.x) * 0.06;
-        camera.position.y += (0 - camera.position.y) * 0.06;
+        camera.position.x += (0 - camera.position.x) * 0.08;
+        camera.position.y += (0 - camera.position.y) * 0.08;
         camera.lookAt(centerVector);
       }
 
@@ -120,7 +120,7 @@ const ParticlePhotoCanvas = (props) => {
       1000
     );
 
-    camera.position.set(20, 0, 4);
+    camera.position.set(35, 0, 4);
     camera.lookAt(centerVector);
     scene.add(camera);
     camera.zoom = 1;

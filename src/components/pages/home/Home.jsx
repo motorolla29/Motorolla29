@@ -1,5 +1,5 @@
-import WaveCanvas from '../../canvas/wave-canvas';
-import TextParticlesCanvas from '../../canvas/text-particles-canvas';
+import WaveCanvas from '../../../canvas/Wave-canvas';
+import TextParticlesCanvas from '../../../canvas/Text-particles-canvas';
 
 import './home.css';
 

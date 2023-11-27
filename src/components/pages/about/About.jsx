@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ParticlePhotoCanvas from '../../canvas/particle-photo-canvas';
+import ParticlePhotoCanvas from '../../../canvas/Particle-photo-canvas';
 
 import './about.css';
 

@@ -1,30 +1,21 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import MainLayout from './layouts/main-layout/MainLayout';
-import Home from './components/home/Home';
-import About from './components/about/About';
-import Projects from './components/projects/Projects';
-import Contacts from './components/contacts/Contacts';
-import NotFound from './components/not-found/NotFound';
+import MainLayout from './layouts/main-layout/main-layout';
+import Home from './components/pages/home/Home';
+import About from './components/pages/about/About';
+import Projects from './components/pages/projects/Projects';
+import Contacts from './components/pages/contacts/Contacts';
+import NotFound from './components/pages/not-found/NotFound';
 
 import './App.css';
-import StarsCanvas from './canvas/stars-canvas';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <MainLayout />
-                <StarsCanvas />
-              </>
-            }
-          >
-            <Route index element={<Home />} />
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="projects" element={<Projects />} />
             <Route path="contacts" element={<Contacts />} />

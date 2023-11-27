@@ -1,0 +1,52 @@
+.header_container {
+  width: 100vw;
+  padding: 5vh 5vw;
+  display: flex;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo_container {
+  margin: 5px;
+}
+
+.logo_container a {
+  display: flex;
+  align-items: baseline;
+}
+
+.logo {
+  width: 130px;
+  height: 65px;
+}
+
+.logo:hover {
+}
+
+.header_nav {
+}
+
+.header_nav a {
+  padding: 2vh 6vw;
+  color: rgba(228, 228, 228, 0.5);
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: rgba(56, 55, 55, 0.5);
+  font-size: 20px;
+  margin: 2vh 2vw;
+  text-decoration: none;
+}
+
+a.active {
+  border-color: rgba(220, 220, 220, 0.25);
+  background-color: rgba(87, 87, 87, 0.05);
+}
+
+.header_nav a:hover {
+  background-color: rgba(87, 87, 87, 0.05);
+}

@@ -1,0 +1,40 @@
+.social {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+.social__item {
+  margin: 2vh 1vw;
+}
+.social__link {
+  display: flex;
+}
+
+.social__link svg {
+  width: 40px;
+  height: 40px;
+}
+
+.social__link[title='My Github'] svg {
+  fill: rgba(226, 249, 194, 0.5);
+}
+.social__link[title='My Habr Career'] svg {
+  fill: rgba(119, 162, 182, 0.5);
+}
+.social__link[title='My Linked In'] svg {
+  fill: rgba(159, 226, 236, 0.5);
+}
+.social__link[title='My Vk'] svg {
+  fill: rgba(148, 195, 249, 0.5);
+}
+.social__link[title='My Telegram'] svg {
+  fill: rgba(11, 162, 230, 0.5);
+}
+.social__link[title='Mail Me'] svg {
+  fill: rgba(98, 13, 13, 0.5);
+}
+
+.social__link:hover svg,
+.social__link:focus svg {
+  fill: rgba(180, 180, 180, 0.3);
+}
