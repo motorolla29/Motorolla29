@@ -8,13 +8,21 @@ import Contacts from './components/pages/contacts/Contacts';
 import NotFound from './components/pages/not-found/NotFound';
 
 import './App.css';
+import StarsCanvas from './canvas/Stars-canvas';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route element={<MainLayout />}>
+          <Route
+            element={
+              <>
+                <MainLayout />
+                <StarsCanvas />
+              </>
+            }
+          >
             <Route path="/" element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="projects" element={<Projects />} />
