@@ -93,8 +93,8 @@ const ParticlePhotoCanvas = (props) => {
     const render = function () {
       particles.geometry.verticesNeedUpdate = true;
       if (!isMouseDown) {
-        camera.position.x += (0 - camera.position.x) * 0.08;
-        camera.position.y += (0 - camera.position.y) * 0.08;
+        camera.position.x += (0 - camera.position.x) * 0.1;
+        camera.position.y += (0 - camera.position.y) * 0.1;
         camera.lookAt(centerVector);
       }
 
@@ -146,6 +146,7 @@ const ParticlePhotoCanvas = (props) => {
     window.addEventListener('resize', onResize, false);
 
     return () => {
+      console.log('returned');
       animations.forEach((a) => {
         cancelAnimationFrame(a);
       });

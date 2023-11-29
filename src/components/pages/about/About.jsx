@@ -1,11 +1,17 @@
 import React from 'react';
 
 import ParticlePhotoCanvas from '../../../canvas/Particle-photo-canvas';
+import Promo from '../../promo/Promo';
 
 import './about.css';
 
 const About = () => {
-  return <ParticlePhotoCanvas />;
+  return (
+    <>
+      <ParticlePhotoCanvas />
+      <Promo />
+    </>
+  );
 };
 
 export default About;

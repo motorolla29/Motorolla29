@@ -1,0 +1,105 @@
+.promo_container {
+  position: absolute;
+  overflow: hidden;
+  z-index: -2;
+  left: 15vw;
+  top: 15vh;
+  bottom: 0;
+  width: 700px;
+}
+.promo {
+  display: flex;
+  flex-direction: column;
+}
+
+.promo_greeting {
+  color: rgba(149, 149, 149, 0.2);
+  font-size: 80px;
+  font-family: 'segoe print', Verdana, sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  animation: name duration timing-function delay iteration-count direction
+    fill-mode;
+}
+
+.promo_name {
+  color: rgba(65, 64, 64, 0.5);
+  font-weight: 600;
+  font-size: 50px;
+  font-family: 'segoe script', Verdana, sans-serif;
+  animation: ;
+}
+
+.promo_role {
+  margin: 2vh auto;
+  font-family: 'Black Ops One', Arial, sans-serif;
+  font-size: 25px;
+  line-height: 40px;
+  color: rgba(252, 255, 89, 0.25);
+  animation: l;
+}
+.promo_details {
+  margin: 2vh auto;
+  font-family: 'Black Ops One', Arial, sans-serif;
+  font-size: 25px;
+  line-height: 40px;
+  color: rgba(138, 138, 138, 0.5);
+  animation: l;
+}
+
+@media (max-width: 1650px) {
+  .promo_container {
+    width: 600px;
+  }
+  .promo_greeting {
+    font-size: 70px;
+  }
+  .promo_name {
+    font-size: 45px;
+  }
+  .promo_role {
+    font-size: 20px;
+  }
+  .promo_details {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .promo_container {
+    left: 5vw;
+  }
+  .promo {
+    text-align: left;
+  }
+}
+
+@media (max-width: 1000px) {
+  .promo_container {
+    width: 500px;
+  }
+  .promo_role {
+    line-height: 30px;
+  }
+  .promo_details {
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 750px) {
+  .promo_container {
+    width: 330px;
+  }
+  .promo_greeting {
+    font-size: 65px;
+  }
+  .promo_name {
+    font-size: 40px;
+  }
+  .promo_role {
+    line-height: 25px;
+  }
+  .promo_details {
+    line-height: 25px;
+  }
+}

@@ -32,13 +32,16 @@
 
 .header_nav a {
   padding: 2vh 6vw;
-  color: rgba(228, 228, 228, 0.5);
+  color: rgba(228, 228, 228, 0.2);
   border: 1px solid;
   border-radius: 5px;
   border-color: rgba(56, 55, 55, 0.5);
+  font-family: 'Black Ops One';
+  font-weight: 100;
   font-size: 20px;
   margin: 2vh 2vw;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 a.active {
