@@ -50,7 +50,10 @@ const TextParticlesCanvas = () => {
       this.maxTextWidth = this.width * 0.8;
       this.fontSize = this.width / 2.5;
       this.textX = this.width / 2;
-      this.textY = this.height / 2;
+      this.textY =
+        this.width > 1200 && this.height < 750
+          ? this.fontSize / 2 + 150
+          : this.height / 1.7;
 
       this.particles = [];
       this.gap = 10;
@@ -95,23 +98,29 @@ const TextParticlesCanvas = () => {
       });
     }
   }
+
   useEffect(() => {
     const canvas = ref.current;
     const ctx = canvas.getContext('2d', {
       willReadFrequently: true,
     });
+
     let animationID;
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
 
     let effect = new Effect(canvas.width, canvas.height);
-    effect.wrapText(ctx);
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
     function animate() {
       effect.update();
       effect.render(ctx);
       animationID = requestAnimationFrame(animate);
     }
+
+    document.fonts.ready.then(() => {
+      effect.wrapText(ctx);
+    });
 
     animate();
 
@@ -125,7 +134,7 @@ const TextParticlesCanvas = () => {
       canvas.height = window.innerHeight;
       effect = new Effect(canvas.width, canvas.height);
       effect.wrapText(ctx);
-    }, 350);
+    }, 250);
 
     window.addEventListener('mousemove', onMousemoveHandler);
     window.addEventListener('resize', onResizeDebouncedHandler);

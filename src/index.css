@@ -18,6 +18,8 @@ body {
 }
 
 canvas {
+  max-height: 100%;
+  max-width: 100%;
   position: absolute;
   left: 0;
   top: 0;
@@ -26,11 +28,25 @@ canvas {
   z-index: -1;
 }
 
-@font-face {
-  font-family: 'Black Ops One';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Black Ops One'),
-    url('https://fonts.cdnfonts.com/s/93143/BlackOpsOne-Regular.woff')
-      format('woff');
+@keyframes slidein {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

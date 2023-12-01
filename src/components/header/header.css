@@ -11,6 +11,7 @@
 }
 
 .logo_container {
+  user-select: none;
   margin: 5px;
 }
 
@@ -22,9 +23,13 @@
 .logo {
   width: 130px;
   height: 65px;
+  background: url('../../images/Untitled-2.png');
+  background-size: 130px 65px;
 }
 
 .logo:hover {
+  background: url('../../images/Untitled-1.png');
+  background-size: 130px 65px;
 }
 
 .header_nav {
@@ -42,6 +47,7 @@
   margin: 2vh 2vw;
   text-decoration: none;
   text-transform: uppercase;
+  user-select: none;
 }
 
 a.active {
