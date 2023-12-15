@@ -1,11 +1,13 @@
 .promo_container {
+  display: flex;
+  align-items: center;
   position: absolute;
   overflow: hidden;
   z-index: -2;
   left: 15vw;
-  top: 15vh;
-  bottom: 0;
-  width: 700px;
+  top: 90px;
+  bottom: 35px;
+  width: 600px;
   user-select: none;
 }
 .promo {
@@ -16,11 +18,10 @@
 .promo_greeting {
   opacity: 0;
   color: rgba(149, 149, 149, 0.2);
-  font-size: 80px;
+  font-size: 70px;
   font-family: 'segoe print', Verdana, sans-serif;
   font-weight: 100;
-  text-transform: uppercase;
-  animation: slidein 0.2s ease-in-out;
+  animation: slide-in 0.4s ease-in-out;
   animation-fill-mode: forwards;
 }
 
@@ -28,89 +29,81 @@
   opacity: 0;
   color: rgba(65, 64, 64, 0.5);
   font-weight: 600;
-  font-size: 50px;
+  font-size: 45px;
   font-family: 'segoe script', Verdana, sans-serif;
-  animation: slidein 0.2s ease-in-out;
+  animation: slide-in 0.4s ease-in-out;
   animation-fill-mode: forwards;
-  animation-delay: 0.3s;
+  animation-delay: 0.2s;
 }
 
 .promo_role {
   opacity: 0;
   margin: 2vh auto;
   font-family: 'Black Ops One', Arial, sans-serif;
-  font-size: 25px;
-  line-height: 40px;
+  font-size: 20px;
+  line-height: 35px;
   color: rgba(252, 255, 89, 0.25);
-  animation: slide-from-left 0.3s ease-out;
+  animation: slide-rigth 0.6s ease-in-out;
   animation-fill-mode: forwards;
-  animation-delay: 0.8s;
+  animation-delay: 0.6s;
 }
 .promo_details {
   opacity: 0;
   margin: 2vh auto;
   font-family: 'Black Ops One', Arial, sans-serif;
-  font-size: 25px;
-  line-height: 40px;
+  font-size: 20px;
+  line-height: 35px;
   color: rgba(138, 138, 138, 0.5);
-  animation: slide-from-left 0.3s ease-out;
+  animation: slide-rigth 0.6s ease-in-out;
   animation-fill-mode: forwards;
-  animation-delay: 0.8s;
+  animation-delay: 0.6s;
 }
 
-@media (max-width: 1650px) {
+@media (max-width: 1320px) {
   .promo_container {
-    width: 600px;
-  }
-  .promo_greeting {
-    font-size: 70px;
-  }
-  .promo_name {
-    font-size: 45px;
-  }
-  .promo_role {
-    font-size: 20px;
-  }
-  .promo_details {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 1280px) {
-  .promo_container {
-    left: 5vw;
-  }
-  .promo {
-    text-align: left;
-  }
-}
-
-@media (max-width: 1000px) {
-  .promo_container {
+    left: 10vw;
     width: 500px;
   }
-  .promo_role {
-    line-height: 30px;
+}
+
+@media (max-width: 970px) {
+  .promo_container {
+    width: 450px;
+    left: 5vw;
   }
+  .promo_greeting {
+    font-size: 50px;
+  }
+  .promo_name {
+    font-size: 25px;
+  }
+  .promo_role,
   .promo_details {
-    line-height: 30px;
+    font-size: 20px;
+    line-height: 25px;
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 670px) {
   .promo_container {
-    width: 330px;
+    width: 350px;
+  }
+}
+
+@media (max-width: 500px) {
+  .promo_container {
+    width: 50vw;
+    text-align: left;
   }
   .promo_greeting {
-    font-size: 65px;
+    font-size: 35px;
   }
   .promo_name {
-    font-size: 40px;
+    font-size: 25px;
   }
-  .promo_role {
-    line-height: 25px;
-  }
+  .promo_role,
   .promo_details {
-    line-height: 25px;
+    font-size: 10px;
+    line-height: 20px;
   }
 }

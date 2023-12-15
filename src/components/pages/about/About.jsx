@@ -1,5 +1,3 @@
-import React from 'react';
-
 import ParticlePhotoCanvas from '../../../canvas/Particle-photo-canvas';
 import Promo from '../../promo/Promo';
 

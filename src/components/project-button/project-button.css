@@ -1,0 +1,46 @@
+.sliding-button {
+  text-decoration: none;
+  color: rgba(171, 171, 171, 0.5);
+  display: inline-block;
+  position: relative;
+  padding: 15px 30px;
+  border: 1px solid;
+  border-image: linear-gradient(
+    180deg,
+    #05050500,
+    var(--current-color),
+    #05050500
+  );
+  border-image-slice: 1;
+  margin: 10px 20px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 2px;
+  transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.sliding-button:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 0;
+  width: 100%;
+  z-index: -1;
+  color: white;
+  background: linear-gradient(
+    180deg,
+    #05050500,
+    var(--current-color),
+    #05050500
+  );
+  transition: 0.5s ease;
+}
+.sliding-button:hover {
+  color: white;
+}
+.sliding-button:hover:before {
+  bottom: 0%;
+  top: 0;
+  height: 100%;
+}

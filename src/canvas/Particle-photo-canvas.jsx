@@ -52,12 +52,14 @@ const ParticlePhotoCanvas = (props) => {
     const material = new THREE.PointsMaterial();
     material.vertexColors = true;
     material.transparent = true;
+    const heigthOffset = ww < 500 ? 70 : 0;
+    const widthOffset = ww < 500 ? 300 : 400;
     for (let y = 0, y2 = imagedata.height; y < y2; y += 1) {
       for (let x = 0, x2 = imagedata.width; x < x2; x += 1) {
         if (imagedata.data[x * 4 + y * 4 * imagedata.width] > 0) {
           const vertex = new THREE.Vector3();
-          vertex.x = x - imagedata.width / 2 + 400;
-          vertex.y = -y + imagedata.height / 2;
+          vertex.x = x - imagedata.width / 2 + widthOffset;
+          vertex.y = -y + imagedata.height / 2 - heigthOffset;
           vertex.z = -Math.random() * 700;
 
           vertex.speed = Math.random();

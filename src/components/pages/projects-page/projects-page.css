@@ -1,0 +1,18 @@
+.projects_page_container {
+  min-height: 550px;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 780px) {
+  .projects_page_container {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 670px) {
+  .projects_page_container {
+    min-height: 650px;
+  }
+}

@@ -7,14 +7,12 @@ import './main-layout.css';
 
 const MainLayout = () => {
   return (
-    <div className="content_wrapper">
+    <div className="content_wrapper" id="content_wrapper">
+      <Header />
       <div className="content">
-        <Header />
         <Outlet />
       </div>
-      <div className="footer_container">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 };

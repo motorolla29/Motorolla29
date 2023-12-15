@@ -26,9 +26,27 @@ canvas {
   right: 0;
   bottom: 0;
   z-index: -1;
+  font-family: 'Black Ops One';
 }
 
-@keyframes slidein {
+.slide-down {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.slide-down-scale {
+  opacity: 0;
+  transform: translateY(-10px);
+  scale: 0.9;
+}
+
+.slide-left-scale {
+  opacity: 0;
+  transform: translateX(100px);
+  scale: 0.8;
+}
+
+@keyframes slide-in {
   from {
     opacity: 0;
     transform: translateY(-15px);
@@ -40,10 +58,10 @@ canvas {
   }
 }
 
-@keyframes slide-from-left {
+@keyframes slide-rigth {
   from {
     opacity: 0;
-    transform: translateX(-300px);
+    transform: translateX(-100px);
   }
   to {
     opacity: 1;

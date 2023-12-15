@@ -1,5 +1,3 @@
 .footer {
-}
-
-.social_item {
+  flex-shrink: 0;
 }

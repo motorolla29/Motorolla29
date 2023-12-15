@@ -6,15 +6,15 @@
   list-style-type: none;
 }
 .social__item {
-  margin: 2vh 1vw;
+  margin: 1vh 0.5vw;
 }
 .social__link {
   display: flex;
 }
 
 .social__link svg {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
 
 .social__link[title='My Github'] svg {

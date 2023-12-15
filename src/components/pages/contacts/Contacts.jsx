@@ -1,3 +1,5 @@
+import './contacts.css';
+
 const Contacts = () => {
   return <h1>Contacts</h1>;
 };

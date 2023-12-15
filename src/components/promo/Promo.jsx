@@ -3,7 +3,7 @@ import './promo.css';
 const Promo = () => (
   <div className="promo_container">
     <div className="promo">
-      <h1 className="promo_greeting">Hello.</h1>
+      <p className="promo_greeting">Hello.</p>
       <p className="promo_name">
         My name is{' '}
         <span
@@ -12,7 +12,7 @@ const Promo = () => (
             color: 'rgb(94, 93, 92)',
           }}
         >
-          Vitaliy
+          Vitaliy.
         </span>
       </p>
       <p className="promo_role">
@@ -25,8 +25,7 @@ const Promo = () => (
         >
           Frontend developer
         </span>{' '}
-        with over 2 years of experience with HTML, CSS and native JavaScript, as
-        well as development in React and Redux.
+        with over 2 years of experience with HTML, CSS and JavaScript.
       </p>
       <p className="promo_details">
         I enjoy working on both large scale and small, challenging projects,

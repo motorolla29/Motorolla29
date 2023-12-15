@@ -1,0 +1,58 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination_list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.pagination_link {
+  margin: 10px;
+  text-decoration: none;
+  font-family: 'Black Ops One';
+  font-size: 50px;
+  color: rgb(53, 53, 53);
+}
+
+.pagination_link.active {
+  color: rgba(255, 255, 255, 0.25);
+}
+.pagination_link:hover:not(.active) {
+  color: rgba(255, 255, 255, 0.4);
+}
+.pagination_arrow_next,
+.pagination_arrow_previous {
+  display: flex;
+  align-items: center;
+}
+
+.arrow_icon {
+  fill: rgb(53, 53, 53);
+  margin: 10px;
+  width: 55px;
+  height: 55px;
+}
+
+.arrow_icon:hover {
+  fill: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 970px) {
+}
+
+@media (max-width: 780px) {
+  .pagination_link {
+    margin: 5px;
+    font-size: 35px;
+  }
+  .arrow_icon {
+    margin: 10px;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 670px) {
+}

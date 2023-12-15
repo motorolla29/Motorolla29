@@ -1,0 +1,132 @@
+.projects_container {
+  overflow: hidden;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.project_info_container {
+  user-select: none;
+  display: flex;
+  align-items: flex-start;
+}
+.project_info {
+  padding: 0 15px;
+  width: 650px;
+}
+
+.project_title {
+  color: rgba(65, 64, 64, 0.5);
+  font-weight: 600;
+  font-size: 50px;
+  font-family: 'segoe script', Verdana, sans-serif;
+}
+
+.project_subtitle {
+  font-family: 'Black Ops One', Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--current-color);
+  overflow: hidden;
+}
+.project_skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style-type: none;
+}
+.project_skills li {
+  margin: 5px 5px;
+  color: aliceblue;
+}
+
+.project_skills_title {
+  color: rgb(204, 204, 204, 0.5);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 25px 0 10px 0;
+}
+
+.project_skills svg {
+  width: 25px;
+  height: 25px;
+  margin: 5px 5px;
+  opacity: 0.7;
+}
+
+.project_skills svg:hover {
+  opacity: 1;
+}
+
+.project_buttons {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.project_screen {
+}
+
+.project_screen_picture {
+  overflow: hidden;
+  width: 525px;
+}
+
+@media (max-width: 1200px) {
+  .project_info {
+    width: 500px;
+  }
+  .project_title {
+    font-size: 35px;
+  }
+  .project_subtitle {
+    font-size: 15px;
+  }
+
+  .project_skills_title {
+    font-size: 15px;
+  }
+
+  .project_skills svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .project_screen_picture {
+    width: 450px;
+  }
+}
+
+@media (max-width: 970px) {
+  .project_info {
+    width: 400px;
+  }
+  .project_screen_picture {
+    width: 350px;
+  }
+}
+@media (max-width: 780px) {
+  .project_info {
+    width: 350px;
+  }
+  .project_subtitle {
+    font-size: 12px;
+  }
+
+  .project_buttons {
+    font-size: 10px;
+    margin-top: 5px;
+  }
+  .project_screen_picture {
+    width: 300px;
+  }
+}
+
+@media (max-width: 670px) {
+  .projects_container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
