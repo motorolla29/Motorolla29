@@ -18,7 +18,7 @@
 }
 
 .project_title {
-  color: rgba(65, 64, 64, 0.5);
+  color: rgba(65, 65, 65, 0.5);
   font-weight: 600;
   font-size: 50px;
   font-family: 'segoe script', Verdana, sans-serif;
@@ -66,12 +66,19 @@
   justify-content: center;
 }
 
-.project_screen {
-}
-
 .project_screen_picture {
   overflow: hidden;
   width: 525px;
+}
+
+.project_info,
+.project_title,
+.project_subtitle,
+.project_skills_title,
+.project_skills svg,
+.project_screen_picture,
+.project_buttons {
+  transition: width 0.5s ease, height 0.5s ease, font-size 0.5s ease;
 }
 
 @media (max-width: 1200px) {
@@ -127,6 +134,5 @@
 @media (max-width: 670px) {
   .projects_container {
     flex-direction: column-reverse;
-    align-items: center;
   }
 }

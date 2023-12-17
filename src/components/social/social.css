@@ -7,6 +7,7 @@
 }
 .social__item {
   margin: 1vh 0.5vw;
+  transition: all 0.5s ease;
 }
 .social__link {
   display: flex;
@@ -39,4 +40,10 @@
 .social__link:hover svg,
 .social__link:focus svg {
   fill: rgba(180, 180, 180, 0.3);
+}
+
+@media (max-width: 500px) {
+  .social__item {
+    margin: 2vh 2vw;
+  }
 }

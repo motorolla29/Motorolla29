@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <>
       <WaveCanvas />
-      <TextParticlesCanvas text="M29" fontSizeMultiplier={1} />
+      <TextParticlesCanvas text="M29" />
     </>
   );
 };

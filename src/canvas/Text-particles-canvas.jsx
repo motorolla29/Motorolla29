@@ -3,13 +3,13 @@ import { useRef } from 'react';
 
 import debounce from '../utils/debounce';
 class Particle {
-  constructor(effect, x, y) {
+  constructor(effect, x, y, particleSize) {
     this.effect = effect;
     this.x = Math.random() * this.effect.width;
     this.y = this.effect.height;
     this.originX = x;
     this.originY = y;
-    this.size = 1.5;
+    this.size = particleSize;
     this.color = 'rgb(110, 110, 110)';
     this.dx = 0;
     this.dy = 0;
@@ -37,7 +37,7 @@ class Particle {
 }
 
 class Effect {
-  constructor(context, width, height, text, fontSizeMultiplier) {
+  constructor(context, width, height, text, fontSizeMultiplier, gap) {
     this.ctx = context;
     this.text = text;
     this.width = width;
@@ -51,7 +51,7 @@ class Effect {
         : this.height / 1.7;
 
     this.particles = [];
-    this.gap = 10;
+    this.gap = gap;
     this.mouse = {
       radius: 2000,
       x: 0,
@@ -59,7 +59,7 @@ class Effect {
     };
   }
 
-  wrapText() {
+  wrapText(particleSize) {
     this.ctx.font = this.fontSize + 'px Black Ops One';
     this.ctx.textAlign = 'center';
     this.ctx.textBaseline = 'middle';
@@ -72,7 +72,7 @@ class Effect {
         const index = (y * this.width + x) * 4;
         const alpha = pixels[index];
         if (alpha > 0 && (this.fontSize < 250 || Math.random() < 0.55)) {
-          this.particles.push(new Particle(this, x, y));
+          this.particles.push(new Particle(this, x, y, particleSize));
         }
       }
     }
@@ -94,7 +94,12 @@ class Effect {
   }
 }
 
-const TextParticlesCanvas = ({ text, fontSizeMultiplier }) => {
+const TextParticlesCanvas = ({
+  text,
+  fontSizeMultiplier = 1,
+  gap = 10,
+  particleSize = 1.5,
+}) => {
   const ref = useRef();
   let effect;
 
@@ -114,11 +119,12 @@ const TextParticlesCanvas = ({ text, fontSizeMultiplier }) => {
       canvas.width,
       canvas.height,
       text,
-      fontSizeMultiplier
+      fontSizeMultiplier,
+      gap
     );
 
     document.fonts.ready.then(() => {
-      effect.wrapText();
+      effect.wrapText(particleSize);
     });
 
     function animate() {
@@ -142,9 +148,10 @@ const TextParticlesCanvas = ({ text, fontSizeMultiplier }) => {
         canvas.width,
         canvas.height,
         text,
-        fontSizeMultiplier
+        fontSizeMultiplier,
+        gap
       );
-      effect.wrapText();
+      effect.wrapText(particleSize);
     }, 250);
 
     window.addEventListener('mousemove', onMousemoveHandler);

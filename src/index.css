@@ -46,6 +46,11 @@ canvas {
   scale: 0.8;
 }
 
+.scale-to-right {
+  transform: scaleX(0);
+  opacity: 0;
+}
+
 @keyframes slide-in {
   from {
     opacity: 0;

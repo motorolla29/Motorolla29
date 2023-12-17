@@ -1,0 +1,38 @@
+.shining_button {
+  font-size: 1.5rem;
+  padding: 1rem 3rem;
+  color: rgba(150, 150, 150, 0.5);
+  background: transparent;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border: 1px solid rgba(150, 150, 150, 0.5);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.shining_button:hover {
+  color: rgba(150, 150, 150, 0.8);
+  box-shadow: 1px 1px 20px 1px rgba(150, 150, 150, 0.5);
+}
+
+.shining_button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(187, 187, 187, 0.1),
+    transparent
+  );
+  transition: all 0.5s;
+}
+
+.shining_button:hover:before {
+  left: 100%;
+}
