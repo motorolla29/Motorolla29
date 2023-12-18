@@ -13,6 +13,12 @@
   cursor: pointer;
 }
 
+.shining_button_medium {
+  font-size: 1rem;
+  padding: 0.7rem 1.5rem;
+  letter-spacing: none;
+}
+
 .shining_button:disabled {
   color: rgba(150, 150, 150, 0.1);
   border: 1px solid rgba(150, 150, 150, 0.1);

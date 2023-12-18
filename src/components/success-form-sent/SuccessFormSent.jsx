@@ -14,9 +14,9 @@ const SuccessFormSent = () => {
   const tl = gsap.timeline();
 
   useEffect(() => {
-    tl.to(successHeaderRef.current, { opacity: 1, y: 0 }, 0.2)
-      .to(successTextRef.current, { opacity: 1, y: 0 }, 0.4)
-      .to(buttonHomeRef.current, { opacity: 1, y: 0 }, 0.6)
+    tl.to(successHeaderRef.current, { opacity: 1, y: 0 })
+      .to(successTextRef.current, { opacity: 1, y: 0 }, 0.7)
+      .to(buttonHomeRef.current, { opacity: 1, y: 0 }, 1)
       .play();
   });
 
@@ -26,7 +26,7 @@ const SuccessFormSent = () => {
         ref={successHeaderRef}
         className="contact_form_success_header slide-down"
       >
-        Successfully sent
+        Successfully sent!
       </h1>
       <p
         ref={successTextRef}
@@ -35,18 +35,13 @@ const SuccessFormSent = () => {
         Your message has been successfully sent, thank you for your attention to
         my person. I will contact you soon.
       </p>
-      <div
-        className="contacts_success_button_home slide-down"
-        ref={buttonHomeRef}
-      >
+      <Link to={`/`}>
         <ShiningButton
           ref={buttonHomeRef}
-          className="shining_button slide-down"
+          className="shining_button shining_button_medium slide-down"
           text="Back Home"
-        >
-          <Link to={`/`} />
-        </ShiningButton>
-      </div>
+        />
+      </Link>
     </div>
   );
 };
