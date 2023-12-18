@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 
+import ShiningButton from '../shining-button/ShiningButton';
+
 import './success-form-sent.css';
 
 const SuccessFormSent = () => {
@@ -37,7 +39,13 @@ const SuccessFormSent = () => {
         className="contacts_success_button_home slide-down"
         ref={buttonHomeRef}
       >
-        <Link to={`/`}>Back Home</Link>
+        <ShiningButton
+          ref={buttonHomeRef}
+          className="shining_button slide-down"
+          text="Back Home"
+        >
+          <Link to={`/`} />
+        </ShiningButton>
       </div>
     </div>
   );

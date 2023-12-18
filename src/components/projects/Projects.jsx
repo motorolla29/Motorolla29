@@ -48,12 +48,17 @@ const Projects = ({
     const currentColor = colorSet[Math.floor(Math.random() * colorSet.length)];
     btnsRef.current.style.setProperty(`--current-color`, `${currentColor}`);
     subtitleRef.current.style.setProperty(`--current-color`, `${currentColor}`);
+    const screenAnimationDelay = window.innerWidth < 500 ? 0 : 0.8;
 
-    tl.to(titleRef.current, { opacity: 1, y: 0 })
-      .to(subtitleRef.current, { opacity: 1, y: 0 }, 0.2)
-      .to(skillsRef.current, { opacity: 1, y: 0 }, 0.4)
-      .to(btnsRef.current, { opacity: 1, y: 0, scale: 1 }, 0.6)
-      .to(screenRef.current, { opacity: 1, x: 0, scale: 1 }, 0.6)
+    tl.to(titleRef.current, { opacity: 1, y: 0 }, 0.2)
+      .to(subtitleRef.current, { opacity: 1, y: 0 }, 0.4)
+      .to(skillsRef.current, { opacity: 1, y: 0 }, 0.6)
+      .to(btnsRef.current, { opacity: 1, y: 0, scale: 1 }, 0.8)
+      .to(
+        screenRef.current,
+        { opacity: 1, x: 0, scale: 1 },
+        screenAnimationDelay
+      )
       .play();
   }, [title, tl]);
 

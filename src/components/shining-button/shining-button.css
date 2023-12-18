@@ -1,4 +1,5 @@
 .shining_button {
+  margin: 1rem;
   font-size: 1.5rem;
   padding: 1rem 3rem;
   color: rgba(150, 150, 150, 0.5);
@@ -12,12 +13,17 @@
   cursor: pointer;
 }
 
-.shining_button:hover {
+.shining_button:disabled {
+  color: rgba(150, 150, 150, 0.1);
+  border: 1px solid rgba(150, 150, 150, 0.1);
+}
+
+.shining_button:not(:disabled):hover {
   color: rgba(150, 150, 150, 0.8);
   box-shadow: 1px 1px 20px 1px rgba(150, 150, 150, 0.5);
 }
 
-.shining_button:before {
+.shining_button:not(:disabled):before {
   content: '';
   position: absolute;
   top: 0;
@@ -30,9 +36,9 @@
     rgba(187, 187, 187, 0.1),
     transparent
   );
-  transition: all 0.5s;
+  transition: all 650ms;
 }
 
-.shining_button:hover:before {
+.shining_button:not(:disabled):hover:before {
   left: 100%;
 }

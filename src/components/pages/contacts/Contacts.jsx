@@ -16,41 +16,45 @@ const Contacts = () => {
 
   const [state, handleSubmit] = useForm('xpzvaqdp');
 
-  const [isFilledName, setFilledName] = useState(false);
-  const [isFilledEmail, setFilledEmail] = useState(false);
-  const [isFilledMessage, setFilledMessage] = useState(false);
-
-  const onNameChange = (e) =>
-    e.target.value ? setFilledName(true) : setFilledName(false);
+  const onNameChange = (e) => {
+    console.log(state);
+    e.target.value
+      ? e.target.classList.add('filled')
+      : e.target.classList.remove('filled');
+  };
   const onEmailChange = (e) =>
-    e.target.value ? setFilledEmail(true) : setFilledEmail(false);
+    e.target.value
+      ? e.target.classList.add('filled')
+      : e.target.classList.remove('filled');
   const onMessageChange = (e) =>
-    e.target.value ? setFilledMessage(true) : setFilledMessage(false);
+    e.target.value
+      ? e.target.classList.add('filled')
+      : e.target.classList.remove('filled');
 
   const tl = gsap.timeline();
 
   useEffect(() => {
     const inputName = nameRef.current.querySelector(`input`);
-    tl.to(headerRef.current, { opacity: 1, y: 0 })
+    tl.to(headerRef.current, { opacity: 1, y: 0 }, 0.15)
       .to(
         nameRef.current,
         { opacity: 1, scaleX: 1, transformOrigin: '0 0' },
-        0.15
+        0.45
       )
       .to(
         emailRef.current,
         { opacity: 1, scaleX: 1, transformOrigin: '0 0' },
-        0.3
+        0.6
       )
       .to(
         messageRef.current,
         { opacity: 1, scaleX: 1, transformOrigin: '0 0' },
-        0.45
+        0.75
       )
-      .to(buttonRef.current, { opacity: 1, y: 0 }, 0.6)
+      .to(buttonRef.current, { opacity: 1, y: 0 }, 1)
       .play()
       .eventCallback(`onComplete`, () => inputName.focus());
-  }, [tl]);
+  });
 
   if (state.succeeded) {
     return <SuccessFormSent />;
@@ -58,17 +62,12 @@ const Contacts = () => {
 
   return (
     <div className="contacts">
-      <h1 ref={headerRef} className="contact_form_header slide_down">
+      <h1 ref={headerRef} className="contact_form_header slide-down">
         Feel free to contact...
       </h1>
       <form onSubmit={handleSubmit} className="contact_form">
         <div className="contact_form_top_fields">
-          <div
-            ref={nameRef}
-            className={`contact_form_field scale-to-right ${
-              isFilledName ? 'filled' : ''
-            }`}
-          >
+          <div ref={nameRef} className="contact_form_field scale-to-right">
             <input
               id="name"
               name="name"
@@ -85,12 +84,7 @@ const Contacts = () => {
               errors={state.errors}
             />
           </div>
-          <div
-            ref={emailRef}
-            className={`contact_form_field scale-to-right ${
-              isFilledEmail ? 'filled' : ''
-            }`}
-          >
+          <div ref={emailRef} className="contact_form_field scale-to-right">
             <input
               id="email"
               name="email"
@@ -110,12 +104,7 @@ const Contacts = () => {
             />
           </div>
         </div>
-        <div
-          ref={messageRef}
-          className={`contact_form_field scale-to-right ${
-            isFilledMessage ? 'filled' : ''
-          }`}
-        >
+        <div ref={messageRef} className="contact_form_field scale-to-right">
           <input
             id="message"
             name="message"
