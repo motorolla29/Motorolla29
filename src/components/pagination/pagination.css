@@ -71,16 +71,19 @@
 }
 
 @media (max-width: 670px) {
+  .pagination {
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 350px) {
   .pagination_link {
-    margin: 7px;
-    font-size: 35px;
+    margin: 4px;
+    font-size: 30px;
   }
   .arrow_icon {
-    margin: 7px;
+    margin: 5px;
     width: 35px;
     height: 35px;
-  }
-  .pagination {
-    margin-bottom: 10px;
   }
 }

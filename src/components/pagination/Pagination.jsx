@@ -28,9 +28,16 @@ const Pagination = ({ data, currentProject }) => {
               display: `${
                 it.id === currentProject.id ||
                 it.id === currentProject.id + 1 ||
+                it.id === currentProject.id + 2 ||
                 it.id === currentProject.id - 1 ||
-                (it.id === currentProject.id + 2 && currentProject.id === 1) ||
-                (it.id === currentProject.id - 2 &&
+                it.id === currentProject.id - 2 ||
+                (it.id === currentProject.id + 3 &&
+                  (currentProject.id === 1 || currentProject.id === 2)) ||
+                (it.id === currentProject.id + 4 && currentProject.id === 1) ||
+                (it.id === currentProject.id - 3 &&
+                  (currentProject.id === data.length ||
+                    currentProject.id === data.length - 1)) ||
+                (it.id === currentProject.id - 4 &&
                   currentProject.id === data.length)
                   ? 'block'
                   : 'none'
