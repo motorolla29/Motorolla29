@@ -21,8 +21,7 @@
   font-size: 70px;
   font-family: 'segoe print', Verdana, sans-serif;
   font-weight: 100;
-  animation: slide-in 0.4s ease-in-out;
-  animation-fill-mode: forwards;
+  animation: slidedown 0.4s forwards 0.2s ease-out;
 }
 
 .promo_name {
@@ -31,39 +30,63 @@
   font-weight: 100;
   font-size: 45px;
   font-family: 'segoe script', Verdana, sans-serif;
-  animation: slide-in 0.4s ease-in-out;
-  animation-fill-mode: forwards;
-  animation-delay: 0.2s;
+  animation: slidedown 0.4s forwards 0.4s ease-out;
 }
 
-.promo_role {
+.promo_name span {
+  background-color: rgba(87, 87, 87, 0.1);
+  color: rgb(94, 93, 92);
+}
+
+.promo_role,
+.promo_details {
   opacity: 0;
   margin: 20px auto;
   font-family: 'Black Ops One', Arial, sans-serif;
   font-size: 20px;
   line-height: 35px;
   color: rgba(252, 255, 89, 0.25);
-  animation: slide-rigth 0.6s ease-in-out;
-  animation-fill-mode: forwards;
-  animation-delay: 0.6s;
+  animation: slideright 0.6s forwards 0.6s ease-in;
 }
+
+.promo_role span {
+  color: rgb(94, 93, 92);
+  background-color: rgba(99, 99, 99, 0.2);
+}
+
 .promo_details {
-  opacity: 0;
-  margin: 20px auto;
-  font-family: 'Black Ops One', Arial, sans-serif;
-  font-size: 20px;
-  line-height: 35px;
   color: rgba(138, 138, 138, 0.5);
-  animation: slide-rigth 0.6s ease-in-out;
-  animation-fill-mode: forwards;
-  animation-delay: 0.6s;
 }
+
 .promo_container,
 .promo_greeting,
 .promo_name,
 .promo_role,
 .promo_details {
-  transition: all 0.5s ease;
+  transition: left 0.5s ease, width 0.5s ease, font-size 0.5s ease,
+    line-height 0.5s ease;
+}
+
+@keyframes slidedown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideright {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 1320px) {
@@ -79,31 +102,25 @@
 
 @media (max-width: 970px) {
   .promo_container {
-    width: 500px;
+    width: 450px;
   }
+
   .promo_greeting {
-    font-size: 45px;
+    font-size: 50px;
   }
   .promo_name {
     font-size: 30px;
   }
   .promo_role,
   .promo_details {
-    font-size: 20px;
-    line-height: 25px;
-  }
-}
-
-@media (max-width: 780px) {
-  .promo_container {
-    left: 90px;
-    width: 350px;
+    font-size: 15px;
+    line-height: 30px;
   }
 }
 
 @media (max-width: 670px) {
   .promo_container {
-    width: 300px;
+    width: 350px;
   }
   .promo_greeting {
     font-size: 40px;
@@ -113,8 +130,8 @@
   }
   .promo_role,
   .promo_details {
-    font-size: 15px;
-    line-height: 20px;
+    font-size: 12px;
+    line-height: 24px;
   }
 }
 

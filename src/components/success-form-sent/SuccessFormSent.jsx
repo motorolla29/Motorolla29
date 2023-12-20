@@ -11,34 +11,41 @@ const SuccessFormSent = () => {
   let successTextRef = useRef();
   let buttonHomeRef = useRef();
 
-  const tl = gsap.timeline();
-
   useEffect(() => {
-    tl.to(successHeaderRef.current, { opacity: 1, y: 0 })
-      .to(successTextRef.current, { opacity: 1, y: 0 }, 0.7)
-      .to(buttonHomeRef.current, { opacity: 1, y: 0 }, 1)
+    const tl = gsap.timeline();
+    tl.fromTo(
+      successHeaderRef.current,
+      { opacity: 0, y: -10 },
+      { opacity: 1, y: 0 }
+    )
+      .fromTo(
+        successTextRef.current,
+        { opacity: 0, y: -10 },
+        { opacity: 1, y: 0 },
+        0.7
+      )
+      .fromTo(
+        buttonHomeRef.current,
+        { opacity: 0, y: -10 },
+        { opacity: 1, y: 0 },
+        1
+      )
       .play();
   });
 
   return (
     <div className="contact_form_success">
-      <h1
-        ref={successHeaderRef}
-        className="contact_form_success_header slide-down"
-      >
+      <h1 ref={successHeaderRef} className="contact_form_success_header">
         Successfully sent!
       </h1>
-      <p
-        ref={successTextRef}
-        className="contact_form_success_message slide-down"
-      >
+      <p ref={successTextRef} className="contact_form_success_message">
         Your message has been successfully sent, thank you for your attention to
         my person. I will contact you soon.
       </p>
       <Link to={`/`}>
         <ShiningButton
           ref={buttonHomeRef}
-          className="shining_button shining_button_medium slide-down"
+          className="shining_button medium"
           text="Back Home"
         />
       </Link>

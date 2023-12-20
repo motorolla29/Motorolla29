@@ -31,29 +31,44 @@ const Contacts = () => {
       ? e.target.classList.add('filled')
       : e.target.classList.remove('filled');
 
-  const tl = gsap.timeline();
-
   useEffect(() => {
     const inputName = nameRef.current.querySelector(`input`);
-    tl.to(headerRef.current, { opacity: 1, y: 0 }, 0.15)
-      .to(
+    const tl = gsap.timeline();
+    tl.fromTo(
+      headerRef.current,
+      { opacity: 0, y: -10 },
+      { opacity: 1, y: 0, duration: 0.5 }
+    )
+      .fromTo(
         nameRef.current,
-        { opacity: 1, scaleX: 1, transformOrigin: '0 0' },
-        0.45
+        { opacity: 0, scaleX: 0 },
+        { opacity: 1, scaleX: 1, transformOrigin: '0 0', duration: 1 },
+        0.25
       )
-      .to(
+      .fromTo(
         emailRef.current,
-        { opacity: 1, scaleX: 1, transformOrigin: '0 0' },
-        0.6
+        { opacity: 0, scaleX: 0 },
+        { opacity: 1, scaleX: 1, transformOrigin: '0 0', duration: 1 },
+        0.25
       )
-      .to(
+      .fromTo(
         messageRef.current,
-        { opacity: 1, scaleX: 1, transformOrigin: '0 0' },
-        0.75
+        { opacity: 0, scaleX: 0 },
+        { opacity: 1, scaleX: 1, transformOrigin: '0 0', duration: 1 },
+        0.5
       )
-      .to(buttonRef.current, { opacity: 1, y: 0 }, 1)
+      .fromTo(
+        buttonRef.current,
+        { opacity: 0, y: -10 },
+        { opacity: 1, y: 0, duration: 0.5 },
+        1
+      )
       .play()
       .eventCallback(`onComplete`, () => inputName.focus());
+
+    return () => {
+      tl.revert();
+    };
   });
 
   if (state.succeeded) {
@@ -62,12 +77,12 @@ const Contacts = () => {
 
   return (
     <div className="contacts">
-      <h1 ref={headerRef} className="contact_form_header slide-down">
+      <h1 ref={headerRef} className="contact_form_header">
         Feel free to contact...
       </h1>
       <form onSubmit={handleSubmit} className="contact_form">
         <div className="contact_form_top_fields">
-          <div ref={nameRef} className="contact_form_field scale-to-right">
+          <div ref={nameRef} className="contact_form_field">
             <input
               id="name"
               name="name"
@@ -84,7 +99,7 @@ const Contacts = () => {
               errors={state.errors}
             />
           </div>
-          <div ref={emailRef} className="contact_form_field scale-to-right">
+          <div ref={emailRef} className="contact_form_field">
             <input
               id="email"
               name="email"
@@ -104,7 +119,7 @@ const Contacts = () => {
             />
           </div>
         </div>
-        <div ref={messageRef} className="contact_form_field scale-to-right">
+        <div ref={messageRef} className="contact_form_field">
           <input
             id="message"
             name="message"
@@ -125,7 +140,7 @@ const Contacts = () => {
       <ShiningButton
         ref={buttonRef}
         text="Send"
-        className="shining_button slide-down"
+        className="shining_button"
         type="submit"
         disabled={state.submitting}
       />

@@ -14,5 +14,6 @@
 @media (max-width: 670px) {
   .projects_page_container {
     min-height: 650px;
+    flex-direction: column-reverse;
   }
 }

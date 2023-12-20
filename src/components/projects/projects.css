@@ -67,6 +67,7 @@
 }
 
 .project_screen_picture {
+  user-select: none;
   overflow: hidden;
   width: 525px;
 }

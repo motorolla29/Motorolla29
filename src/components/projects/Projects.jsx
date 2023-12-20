@@ -38,41 +38,72 @@ const Projects = ({
   const btnsRef = useRef();
   const screenRef = useRef();
 
-  const tl = gsap.timeline();
-
   console.log('project');
 
   useEffect(() => {
-    console.log('useeffect');
+    console.log('useeffect color');
 
     const currentColor = colorSet[Math.floor(Math.random() * colorSet.length)];
     btnsRef.current.style.setProperty(`--current-color`, `${currentColor}`);
     subtitleRef.current.style.setProperty(`--current-color`, `${currentColor}`);
-    const screenAnimationDelay = window.innerWidth < 500 ? 0 : 0.8;
+  }, [title]);
 
-    tl.to(titleRef.current, { opacity: 1, y: 0 }, 0.2)
-      .to(subtitleRef.current, { opacity: 1, y: 0 }, 0.4)
-      .to(skillsRef.current, { opacity: 1, y: 0 }, 0.6)
-      .to(btnsRef.current, { opacity: 1, y: 0, scale: 1 }, 0.8)
-      .to(
+  useEffect(() => {
+    console.log('effect');
+
+    const screenDelay = window.innerWidth < 670 ? 0.3 : 1;
+    const animationAddedDelay = window.innerWidth < 670 ? 0.8 : 0;
+    const screenPosition = window.innerWidth < 670 ? -100 : 100;
+
+    const tl = gsap.timeline();
+    tl.fromTo(
+      titleRef.current,
+      { opacity: 0, y: -10 },
+      { opacity: 1, y: 0, duration: 0.5 },
+      animationAddedDelay
+    )
+      .fromTo(
+        subtitleRef.current,
+        { opacity: 0, y: -10 },
+        { opacity: 1, y: 0, duration: 0.5 },
+        0.3 + animationAddedDelay
+      )
+      .fromTo(
+        skillsRef.current,
+        { opacity: 0, y: -10 },
+        { opacity: 1, y: 0, duration: 0.5 },
+        0.6 + animationAddedDelay
+      )
+      .fromTo(
+        btnsRef.current,
+        { opacity: 0, y: -10, scale: 0.8 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.5 },
+        0.9 + animationAddedDelay
+      )
+      .fromTo(
         screenRef.current,
-        { opacity: 1, x: 0, scale: 1 },
-        screenAnimationDelay
+        { opacity: 0, x: screenPosition, scale: 0.8 },
+        { opacity: 0.8, x: 0, scale: 1, duration: 1 },
+        screenDelay
       )
       .play();
-  }, [title, tl]);
+    console.log(screenDelay);
+    return () => {
+      tl.revert();
+    };
+  }, [title]);
 
   return (
     <div className="projects_container">
       <div className="project_info_container">
         <div className="project_info">
-          <h2 ref={titleRef} className="project_title slide-down">
+          <h2 ref={titleRef} className="project_title">
             {title}
           </h2>
-          <p ref={subtitleRef} className="project_subtitle slide-down">
+          <p ref={subtitleRef} className="project_subtitle">
             {subtitle}
           </p>
-          <div ref={skillsRef} className="project_skills slide-down">
+          <div ref={skillsRef} className="project_skills">
             <h3 className="project_skills_title">Tech's:</h3>
             <ul>
               {skills.map((skill) => {
@@ -80,14 +111,14 @@ const Projects = ({
               })}
             </ul>
           </div>
-          <div ref={btnsRef} className="project_buttons slide-down-scale">
+          <div ref={btnsRef} className="project_buttons">
             <ProjectBtn text="View" href={demoLink} />
             <ProjectBtn text="Code" href={githubLink} />
           </div>
         </div>
       </div>
 
-      <div ref={screenRef} className="project_screen slide-left-scale">
+      <div ref={screenRef} className="project_screen">
         <picture>
           <source
             media="(min-width: 900px)"

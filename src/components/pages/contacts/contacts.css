@@ -86,6 +86,10 @@
   .contact_form_header {
     font-size: 30px;
   }
+  .shining_button {
+    font-size: 1rem;
+    padding: 0.75rem 2.25rem;
+  }
 }
 
 @media (max-width: 500px) {
