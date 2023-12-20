@@ -95,29 +95,26 @@ const Projects = ({
 
   return (
     <div className="projects_container">
-      <div className="project_info_container">
-        <div className="project_info">
-          <h2 ref={titleRef} className="project_title">
-            {title}
-          </h2>
-          <p ref={subtitleRef} className="project_subtitle">
-            {subtitle}
-          </p>
-          <div ref={skillsRef} className="project_skills">
-            <h3 className="project_skills_title">Tech's:</h3>
-            <ul>
-              {skills.map((skill) => {
-                return getSkillLogo(skill);
-              })}
-            </ul>
-          </div>
-          <div ref={btnsRef} className="project_buttons">
-            <ProjectBtn text="View" href={demoLink} />
-            <ProjectBtn text="Code" href={githubLink} />
-          </div>
+      <div className="project_info">
+        <h2 ref={titleRef} className="project_title">
+          {title}
+        </h2>
+        <p ref={subtitleRef} className="project_subtitle">
+          {subtitle}
+        </p>
+        <div ref={skillsRef} className="project_skills">
+          <h3 className="project_skills_title">Tech's:</h3>
+          <ul>
+            {skills.map((skill) => {
+              return getSkillLogo(skill);
+            })}
+          </ul>
+        </div>
+        <div ref={btnsRef} className="project_buttons">
+          <ProjectBtn text="View" href={demoLink} />
+          <ProjectBtn text="Code" href={githubLink} />
         </div>
       </div>
-
       <div ref={screenRef} className="project_screen">
         <picture>
           <source

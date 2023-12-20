@@ -44,3 +44,17 @@
   top: 0;
   height: 100%;
 }
+
+@media (max-width: 1200px) {
+  .sliding-button {
+    font-size: 14px;
+    padding: 14px 28px;
+  }
+}
+
+@media (max-width: 970px) {
+  .sliding-button {
+    font-size: 12px;
+    padding: 12px 24px;
+  }
+}

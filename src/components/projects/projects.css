@@ -1,18 +1,14 @@
 .projects_container {
+  margin-top: 50px;
   overflow: hidden;
   display: flex;
   flex-grow: 1;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
 }
 
-.project_info_container {
-  user-select: none;
-  display: flex;
-  align-items: flex-start;
-}
 .project_info {
+  user-select: none;
   padding: 0 15px;
   width: 650px;
 }
@@ -60,7 +56,7 @@
 }
 
 .project_buttons {
-  margin-top: 25px;
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -69,6 +65,7 @@
 .project_screen_picture {
   user-select: none;
   overflow: hidden;
+  padding: 0 15px;
   width: 525px;
 }
 
@@ -109,31 +106,49 @@
 
 @media (max-width: 970px) {
   .project_info {
-    width: 400px;
+    width: 410px;
   }
-  .project_screen_picture {
-    width: 350px;
-  }
-}
-@media (max-width: 780px) {
-  .project_info {
-    width: 350px;
+  .project_title {
+    font-size: 30px;
   }
   .project_subtitle {
     font-size: 12px;
   }
-
-  .project_buttons {
-    font-size: 10px;
-    margin-top: 5px;
+  .project_skills_title {
+    font-size: 12px;
+  }
+  .project_skills svg {
+    width: 16px;
+    height: 16px;
   }
   .project_screen_picture {
-    width: 300px;
+    width: 350px;
   }
 }
 
 @media (max-width: 670px) {
   .projects_container {
     flex-direction: column-reverse;
+    align-items: center;
+    flex-grow: 0;
+    margin-top: 10px;
+  }
+
+  .project_info {
+    width: 350px;
+  }
+
+  .project_screen_picture {
+    width: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .project_info {
+    width: 300px;
+  }
+
+  .project_screen_picture {
+    width: 250px;
   }
 }

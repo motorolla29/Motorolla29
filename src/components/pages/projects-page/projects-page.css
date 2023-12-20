@@ -1,13 +1,20 @@
 .projects_page_container {
-  min-height: 550px;
+  min-height: 600px;
   height: 70vh;
   display: flex;
   flex-direction: column;
+  transition: min-height 0.5s ease;
 }
 
-@media (max-width: 780px) {
+@media (max-width: 1200px) {
   .projects_page_container {
-    min-height: 400px;
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 970px) {
+  .projects_page_container {
+    min-height: 450px;
   }
 }
 
@@ -15,5 +22,6 @@
   .projects_page_container {
     min-height: 650px;
     flex-direction: column-reverse;
+    justify-content: flex-end;
   }
 }

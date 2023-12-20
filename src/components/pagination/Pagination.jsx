@@ -24,6 +24,18 @@ const Pagination = ({ data, currentProject }) => {
             className={`pagination_link ${
               it.id === 1 && currentProject.id === 1 ? 'active' : null
             }`}
+            style={{
+              display: `${
+                it.id === currentProject.id ||
+                it.id === currentProject.id + 1 ||
+                it.id === currentProject.id - 1 ||
+                (it.id === currentProject.id + 2 && currentProject.id === 1) ||
+                (it.id === currentProject.id - 2 &&
+                  currentProject.id === data.length)
+                  ? 'block'
+                  : 'none'
+              }`,
+            }}
             key={it.id}
             to={`/projects/${it.id}`}
           >

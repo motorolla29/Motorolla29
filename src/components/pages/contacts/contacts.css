@@ -64,10 +64,12 @@
 .form_validation_error {
   position: absolute;
   left: 0;
-  right: 0;
   top: 100%;
   color: #f44a55;
-  font-size: 13px;
+  font-family: 'Roboto Mono', Verdana, sans-serif;
+  line-height: 2.57;
+  font-size: 0.7rem;
+  user-select: none;
 }
 
 .contact_form_input:focus {

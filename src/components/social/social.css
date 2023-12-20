@@ -6,7 +6,7 @@
   list-style-type: none;
 }
 .social__item {
-  margin: 1vh 0.5vw;
+  margin: 10px 5px;
   transition: all 0.5s ease;
 }
 .social__link {
@@ -42,8 +42,8 @@
   fill: rgba(180, 180, 180, 0.3);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 670px) {
   .social__item {
-    margin: 2vh 2vw;
+    margin: 10px;
   }
 }

@@ -11,6 +11,7 @@ import { ReactComponent as ReduxIcon } from '../images/skills-icons/redux.svg';
 import { ReactComponent as TypescriptIcon } from '../images/skills-icons/typescript.svg';
 import { ReactComponent as ThreeIcon } from '../images/skills-icons/three.svg';
 import { ReactComponent as SassIcon } from '../images/skills-icons/sass.svg';
+import { ReactComponent as GreenSock } from '../images/skills-icons/greensock.svg';
 
 const getSkillLogo = (skill) => {
   switch (skill) {
@@ -40,6 +41,8 @@ const getSkillLogo = (skill) => {
       return <ThreeIcon key="three" />;
     case 'sass':
       return <SassIcon key="sass" />;
+    case 'gsap':
+      return <GreenSock key="gsap" />;
     default:
       break;
   }
