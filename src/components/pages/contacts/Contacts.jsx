@@ -55,7 +55,7 @@ const Contacts = () => {
         messageRef.current,
         { opacity: 0, scaleX: 0 },
         { opacity: 1, scaleX: 1, transformOrigin: '0 0', duration: 1 },
-        0.5
+        0.25
       )
       .fromTo(
         buttonRef.current,
