@@ -19,7 +19,7 @@ class Particle {
     this.angle = 0;
     this.distance = 0;
     this.friction = 0.8;
-    this.ease = 0.1;
+    this.ease = Math.random() * 0.02 + 0.03;
   }
   update() {
     this.dx = this.effect.mouse.x - this.x;

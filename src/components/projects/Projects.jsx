@@ -38,19 +38,13 @@ const Projects = ({
   const btnsRef = useRef();
   const screenRef = useRef();
 
-  console.log('project');
-
   useEffect(() => {
-    console.log('useeffect color');
-
     const currentColor = colorSet[Math.floor(Math.random() * colorSet.length)];
     btnsRef.current.style.setProperty(`--current-color`, `${currentColor}`);
     subtitleRef.current.style.setProperty(`--current-color`, `${currentColor}`);
   }, [title]);
 
   useEffect(() => {
-    console.log('effect');
-
     const screenDelay = window.innerWidth < 670 ? 0.3 : 1;
     const animationAddedDelay = window.innerWidth < 670 ? 0.8 : 0;
     const screenPosition = window.innerWidth < 670 ? -100 : 100;
@@ -87,7 +81,7 @@ const Projects = ({
         screenDelay
       )
       .play();
-    console.log(screenDelay);
+
     return () => {
       tl.revert();
     };
