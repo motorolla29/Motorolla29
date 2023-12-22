@@ -16,14 +16,14 @@
 .project_title {
   color: rgba(65, 65, 65, 0.5);
   font-weight: 600;
-  font-size: 50px;
+  font-size: 60px;
   font-family: 'segoe script', Verdana, sans-serif;
 }
 
 .project_subtitle {
   font-family: 'Black Ops One', Arial, sans-serif;
   font-size: 20px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--current-color);
   overflow: hidden;
 }
@@ -66,7 +66,7 @@
   user-select: none;
   overflow: hidden;
   padding: 0 15px;
-  width: 525px;
+  width: 600px;
 }
 
 .project_info,
@@ -106,7 +106,7 @@
 
 @media (max-width: 970px) {
   .project_info {
-    width: 410px;
+    width: 400px;
   }
   .project_title {
     font-size: 30px;

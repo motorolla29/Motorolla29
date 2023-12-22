@@ -4,10 +4,10 @@
   position: absolute;
   overflow: hidden;
   z-index: -2;
-  left: 200px;
-  top: 90px;
-  bottom: 35px;
-  width: 600px;
+  left: 250px;
+  top: 100px;
+  bottom: 50px;
+  width: 750px;
   user-select: none;
 }
 .promo {
@@ -18,7 +18,7 @@
 .promo_greeting {
   opacity: 0;
   color: rgba(65, 65, 65, 0.5);
-  font-size: 70px;
+  font-size: 100px;
   font-family: 'segoe print', Verdana, sans-serif;
   font-weight: 100;
   animation: slidedown 0.4s forwards 0.2s ease-out;
@@ -28,9 +28,9 @@
   opacity: 0;
   color: rgba(65, 65, 65, 0.5);
   font-weight: 100;
-  font-size: 45px;
+  font-size: 60px;
   font-family: 'segoe script', Verdana, sans-serif;
-  animation: slidedown 0.4s forwards 0.4s ease-out;
+  animation: slidedown 0.4s forwards 0.6s ease-out;
 }
 
 .promo_name span {
@@ -43,10 +43,10 @@
   opacity: 0;
   margin: 20px auto;
   font-family: 'Black Ops One', Arial, sans-serif;
-  font-size: 20px;
-  line-height: 35px;
+  font-size: 30px;
+  line-height: 1.5;
   color: rgba(252, 255, 89, 0.25);
-  animation: slideright 0.6s forwards 0.6s ease-in;
+  animation: slideright 0.6s forwards 0.8s ease-in;
 }
 
 .promo_role span {
@@ -64,7 +64,7 @@
 .promo_role,
 .promo_details {
   transition: left 0.5s ease, width 0.5s ease, font-size 0.5s ease,
-    line-height 0.5s ease;
+    line-height 0.5s ease, text-align 0.5s ease;
 }
 
 @keyframes slidedown {
@@ -88,68 +88,109 @@
     transform: translateX(0);
   }
 }
-
-@media (max-width: 1320px) {
+@media (max-width: 1750px) {
   .promo_container {
-    left: 140px;
+    left: 200px;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1650px) {
+  .promo_container {
+    left: 100px;
+  }
+}
+@media (max-width: 1450px) {
   .promo_container {
     left: 30px;
   }
 }
-
-@media (max-width: 970px) {
+@media (max-width: 1320px) {
   .promo_container {
-    width: 450px;
+    left: 100px;
+    width: 630px;
   }
 
   .promo_greeting {
-    font-size: 50px;
+    font-size: 80px;
   }
   .promo_name {
-    font-size: 30px;
+    font-size: 48px;
   }
   .promo_role,
   .promo_details {
-    font-size: 15px;
-    line-height: 30px;
+    font-size: 25px;
+  }
+}
+@media (max-width: 1200px) {
+  .promo_container {
+    left: 70px;
+    width: 530px;
+  }
+
+  .promo_greeting {
+    font-size: 70px;
+  }
+  .promo_name {
+    font-size: 42px;
+  }
+  .promo_role,
+  .promo_details {
+    font-size: 21px;
+  }
+}
+@media (max-width: 970px) {
+  .promo_container {
+    left: 30px;
+    width: 450px;
+  }
+  .promo_greeting {
+    font-size: 60px;
+  }
+  .promo_name {
+    font-size: 38px;
+  }
+  .promo_role,
+  .promo_details {
+    font-size: 18px;
   }
 }
 
 @media (max-width: 670px) {
   .promo_container {
-    width: 350px;
+    text-align: left;
+    top: 70px;
+    width: 270px;
   }
   .promo_greeting {
-    font-size: 40px;
+    font-size: 60px;
   }
   .promo_name {
-    font-size: 25px;
+    font-size: 38px;
   }
   .promo_role,
   .promo_details {
-    font-size: 12px;
-    line-height: 24px;
+    font-size: 18px;
   }
 }
 
 @media (max-width: 500px) {
   .promo_container {
-    left: 20px;
-    width: 200px;
-    text-align: left;
+    width: 180px;
   }
   .promo_greeting {
-    font-size: 35px;
+    font-size: 40px;
   }
   .promo_name {
-    font-size: 25px;
+    font-size: 24px;
   }
   .promo_role,
   .promo_details {
-    font-size: 10px;
-    line-height: 20px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 300px) {
+  .promo_container {
+    width: 150px;
+    left: 15px;
   }
 }

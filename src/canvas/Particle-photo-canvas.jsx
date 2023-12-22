@@ -52,8 +52,8 @@ const ParticlePhotoCanvas = (props) => {
     const material = new THREE.PointsMaterial();
     material.vertexColors = true;
     material.transparent = true;
-    const heigthOffset = ww < 500 ? 70 : 0;
-    const widthOffset = ww < 500 ? 300 : 400;
+    const heigthOffset = ww <= 500 ? 70 : 0;
+    const widthOffset = ww <= 500 ? 370 : 470;
     for (let y = 0, y2 = imagedata.height; y < y2; y += 1) {
       for (let x = 0, x2 = imagedata.width; x < x2; x += 1) {
         if (imagedata.data[x * 4 + y * 4 * imagedata.width] > 0) {
@@ -126,7 +126,7 @@ const ParticlePhotoCanvas = (props) => {
     camera.position.set(35, 0, 4);
     camera.lookAt(centerVector);
     scene.add(camera);
-    camera.zoom = 1;
+    camera.zoom = `${ww <= 500 ? 0.8 : 1}`;
     camera.updateProjectionMatrix();
 
     const img = new Image();

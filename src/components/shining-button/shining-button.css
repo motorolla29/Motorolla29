@@ -15,12 +15,6 @@
     letter-spacing 0.5s ease-in-out;
 }
 
-.shining_button.medium {
-  font-size: 1rem;
-  padding: 0.75rem 2.25rem;
-  letter-spacing: none;
-}
-
 .shining_button:disabled {
   color: rgba(150, 150, 150, 0.1);
   border: 1px solid rgba(150, 150, 150, 0.1);

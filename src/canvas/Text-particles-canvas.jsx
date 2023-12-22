@@ -19,7 +19,7 @@ class Particle {
     this.angle = 0;
     this.distance = 0;
     this.friction = 0.8;
-    this.ease = Math.random() * 0.02 + 0.03;
+    this.ease = Math.random() * 0.02 + 0.05;
   }
   update() {
     this.dx = this.effect.mouse.x - this.x;
@@ -59,7 +59,7 @@ class Effect {
     };
   }
 
-  wrapText(particleSize) {
+  wrapText(particleSize, rarity) {
     this.ctx.font = this.fontSize + 'px Black Ops One';
     this.ctx.textAlign = 'center';
     this.ctx.textBaseline = 'middle';
@@ -71,7 +71,7 @@ class Effect {
       for (let x = 0; x < this.width; x += this.gap) {
         const index = (y * this.width + x) * 4;
         const alpha = pixels[index];
-        if (alpha > 0 && (this.fontSize < 250 || Math.random() < 0.55)) {
+        if (alpha > 0 && (this.fontSize < 250 || Math.random() < rarity)) {
           this.particles.push(new Particle(this, x, y, particleSize));
         }
       }
@@ -99,6 +99,7 @@ const TextParticlesCanvas = ({
   fontSizeMultiplier = 1,
   gap = 10,
   particleSize = 1.5,
+  rarity = 0.35,
 }) => {
   const ref = useRef();
   let effect;
@@ -124,7 +125,7 @@ const TextParticlesCanvas = ({
     );
 
     document.fonts.ready.then(() => {
-      effect.wrapText(particleSize);
+      effect.wrapText(particleSize, rarity);
     });
 
     function animate() {
@@ -151,7 +152,7 @@ const TextParticlesCanvas = ({
         fontSizeMultiplier,
         gap
       );
-      effect.wrapText(particleSize);
+      effect.wrapText(particleSize, rarity);
     }, 250);
 
     window.addEventListener('mousemove', onMousemoveHandler);

@@ -4,8 +4,8 @@ export const PROJECTS_DATA = [
     title: 'M29',
     subtitle:
       'Personal website - portfolio with 4 pages, created using react. Implemented home page with interactive canvas and contact form on formspree. GreenSock animation platform and three.js also were used here.',
-    githubLink: '/',
-    demoLink: '/',
+    githubLink: 'https://github.com/motorolla29/Motorolla29',
+    demoLink: 'https://motorolla29.vercel.app/',
     skills: [
       'html',
       'css',

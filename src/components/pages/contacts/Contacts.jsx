@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { gsap } from 'gsap';
 
@@ -16,20 +16,16 @@ const Contacts = () => {
 
   const [state, handleSubmit] = useForm('xpzvaqdp');
 
-  const onNameChange = (e) => {
-    console.log(state);
-    e.target.value
-      ? e.target.classList.add('filled')
-      : e.target.classList.remove('filled');
-  };
+  const [nameFilled, setNameFilled] = useState(false);
+  const [emailFilled, setEmailFilled] = useState(false);
+  const [messageFilled, setMessageFilled] = useState(false);
+
+  const onNameChange = (e) =>
+    e.target.value ? setNameFilled(true) : setNameFilled(false);
   const onEmailChange = (e) =>
-    e.target.value
-      ? e.target.classList.add('filled')
-      : e.target.classList.remove('filled');
+    e.target.value ? setEmailFilled(true) : setEmailFilled(false);
   const onMessageChange = (e) =>
-    e.target.value
-      ? e.target.classList.add('filled')
-      : e.target.classList.remove('filled');
+    e.target.value ? setMessageFilled(true) : setMessageFilled(false);
 
   useEffect(() => {
     const inputName = nameRef.current.querySelector(`input`);
@@ -65,11 +61,7 @@ const Contacts = () => {
       )
       .play()
       .eventCallback(`onComplete`, () => inputName.focus());
-
-    return () => {
-      tl.revert();
-    };
-  });
+  }, [headerRef]);
 
   if (state.succeeded) {
     return <SuccessFormSent />;
@@ -87,7 +79,9 @@ const Contacts = () => {
               id="name"
               name="name"
               onChange={onNameChange}
-              className="contact_form_input"
+              className={`contact_form_input${nameFilled ? ' filled' : ''}`}
+              minLength={3}
+              required
             ></input>
             <label className="contact_form_label" htmlFor="name">
               Name
@@ -104,9 +98,9 @@ const Contacts = () => {
               id="email"
               name="email"
               type="email"
-              pattern={`[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$`}
               onChange={onEmailChange}
-              className="contact_form_input"
+              className={`contact_form_input${emailFilled ? ' filled' : ''}`}
+              required
             />
             <label className="contact_form_label" htmlFor="email">
               E-mail
@@ -124,7 +118,9 @@ const Contacts = () => {
             id="message"
             name="message"
             onChange={onMessageChange}
-            className="contact_form_input"
+            className={`contact_form_input${messageFilled ? ' filled' : ''}`}
+            minLength={10}
+            required
           ></input>
           <label className="contact_form_label" htmlFor="message">
             Your message for me
@@ -136,14 +132,14 @@ const Contacts = () => {
             errors={state.errors}
           />
         </div>
+        <ShiningButton
+          ref={buttonRef}
+          text={state.submitting ? 'Sending' : 'Send'}
+          className="shining_button"
+          type="submit"
+          disabled={state.submitting}
+        />
       </form>
-      <ShiningButton
-        ref={buttonRef}
-        text="Send"
-        className="shining_button"
-        type="submit"
-        disabled={state.submitting}
-      />
     </div>
   );
 };
