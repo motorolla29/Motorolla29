@@ -25,7 +25,7 @@ export const PROJECTS_DATA = [
       'Service for booking accommodation in 6 cities using the React - Redux bundle, covered with Jest tests with an implemented leaflet map and authorization with the ability to submit a review for the current property.',
     githubLink: 'https://github.com/motorolla29/SIX-CITIES',
     demoLink: 'https://six-cities-m29.vercel.app/',
-    skills: ['git', 'npm', 'webpack', 'babel', 'react', 'redux', 'jest'],
+    skills: ['webpack', 'babel', 'react', 'redux', 'jest'],
     preview: 'six-cities',
   },
   {
@@ -35,7 +35,7 @@ export const PROJECTS_DATA = [
       'Experience on using React class components with data received from the API based on https://anapioficeandfire.com/. Writing simple Unit tests with Jest also.',
     githubLink: 'https://github.com/motorolla29/Game-Of-Thrones-DB/',
     demoLink: 'https://game-of-thrones-db-m29.vercel.app/',
-    skills: ['html', 'css', 'javascript', 'git', 'npm', 'react', 'jest'],
+    skills: ['npm', 'react', 'jest'],
     preview: 'got-db',
   },
   {
@@ -85,7 +85,7 @@ export const PROJECTS_DATA = [
       'A game for guessing photos or photorealistic drawings. MVP pattern using OOP in JS. Fetching data with JSON-server. Unit-tests with "chai". Building with GULP.',
     githubLink: 'https://github.com/motorolla29/pixel-hunter',
     demoLink: 'https://pixel-hunter-m29.vercel.app/',
-    skills: ['html', 'css', 'javascript', 'git', 'npm', 'gulp', 'sass'],
+    skills: ['javascript', 'git', 'npm', 'gulp', 'sass'],
     preview: 'pixel-hunter',
   },
   {

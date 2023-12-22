@@ -5,12 +5,14 @@
 }
 
 .pagination_list {
+  margin: 5px 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 500px;
 }
 
 .pagination_link {
-  margin: 10px;
+  margin: 5px;
   text-decoration: none;
   font-family: 'Black Ops One';
   font-size: 50px;
@@ -31,7 +33,7 @@
 
 .arrow_icon {
   fill: rgb(53, 53, 53);
-  margin: 10px;
+  margin: 5px;
   width: 55px;
   height: 55px;
 }
@@ -40,6 +42,7 @@
   fill: rgba(255, 255, 255, 0.4);
 }
 .pagination,
+.pagination_list,
 .pagination_link,
 .arrow_icon {
   transition: margin 0.5s ease, font-size 0.5s ease, width 0.5s ease,
@@ -47,24 +50,27 @@
 }
 
 @media (max-width: 1200px) {
+  .pagination_list {
+    width: 450px;
+  }
   .pagination_link {
-    margin: 9px;
     font-size: 45px;
   }
   .arrow_icon {
-    margin: 9px;
     width: 45px;
     height: 45px;
   }
 }
 
 @media (max-width: 970px) {
+  .pagination_list {
+    width: 400px;
+    margin: 10px 0;
+  }
   .pagination_link {
-    margin: 8px;
     font-size: 40px;
   }
   .arrow_icon {
-    margin: 8px;
     width: 40px;
     height: 40px;
   }
@@ -72,18 +78,31 @@
 
 @media (max-width: 670px) {
   .pagination {
-    margin: 10px 0;
+    margin: 40px 0;
+  }
+  .pagination_list {
+    width: 325px;
+  }
+  .pagination_link {
+    font-size: 30px;
+  }
+  .arrow_icon {
+    width: 35px;
+    height: 35px;
   }
 }
 
 @media (max-width: 350px) {
+  .pagination_list {
+    width: 275px;
+  }
   .pagination_link {
-    margin: 4px;
-    font-size: 30px;
+    margin: 3px;
+    font-size: 25px;
   }
   .arrow_icon {
-    margin: 5px;
-    width: 35px;
-    height: 35px;
+    margin: 3px;
+    width: 30px;
+    height: 30px;
   }
 }

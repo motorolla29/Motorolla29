@@ -12,6 +12,7 @@ import { ReactComponent as TypescriptIcon } from '../images/skills-icons/typescr
 import { ReactComponent as ThreeIcon } from '../images/skills-icons/three.svg';
 import { ReactComponent as SassIcon } from '../images/skills-icons/sass.svg';
 import { ReactComponent as GreenSock } from '../images/skills-icons/greensock.svg';
+import { ReactComponent as JestIcon } from '../images/skills-icons/jest.svg';
 
 const getSkillLogo = (skill) => {
   switch (skill) {
@@ -43,6 +44,8 @@ const getSkillLogo = (skill) => {
       return <SassIcon key="sass" />;
     case 'gsap':
       return <GreenSock key="gsap" />;
+    case 'jest':
+      return <JestIcon key="gsap" />;
     default:
       break;
   }

@@ -21,8 +21,8 @@ const Pagination = ({ data, currentProject }) => {
         </NavLink>
         {data.map((it) => (
           <NavLink
-            className={`pagination_link ${
-              it.id === 1 && currentProject.id === 1 ? 'active' : null
+            className={`pagination_link${
+              it.id === 1 && currentProject.id === 1 ? ' active' : ''
             }`}
             style={{
               display: `${
