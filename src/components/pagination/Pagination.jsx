@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
+import { gsap } from 'gsap';
+import MobileDetect from 'mobile-detect';
 
 import { ReactComponent as IconArrowLeft } from './../../images/icons/chevron_square_left_icon_236885.svg';
 import { ReactComponent as IconArrowRigth } from './../../images/icons/chevron_square_right_icon_236884.svg';
@@ -7,8 +9,24 @@ import { ReactComponent as IconArrowRigth } from './../../images/icons/chevron_s
 import './pagination.css';
 
 const Pagination = ({ data, currentProject }) => {
+  const paginationRef = useRef();
+  useEffect(() => {
+    const md = new MobileDetect(window.navigator.userAgent);
+    const paginationY =
+      window.innerWidth < 670 ||
+      (md.tablet() && window.innerWidth < 1200 && window.innerHeight > 800)
+        ? 15
+        : -15;
+    const tl = gsap.timeline();
+    tl.fromTo(
+      paginationRef.current,
+      { opacity: 0, y: paginationY },
+      { opacity: 1, y: 0, duration: 1 }
+    ).play();
+  }, [data]);
+
   return (
-    <nav className="pagination">
+    <nav ref={paginationRef} className="pagination">
       <ul className="pagination_list">
         <NavLink
           to={`/projects/${

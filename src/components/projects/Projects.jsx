@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import MobileDetect from 'mobile-detect';
 
 import ProjectBtn from '../project-button/Project-button';
 import getSkillLogo from '../../utils/get-skill-logo';
@@ -45,9 +46,22 @@ const Projects = ({
   }, [title]);
 
   useEffect(() => {
-    const screenDelay = window.innerWidth < 670 ? 0.3 : 1;
-    const animationAddedDelay = window.innerWidth < 670 ? 0.8 : 0;
-    const screenPosition = window.innerWidth < 670 ? -100 : 100;
+    const md = new MobileDetect(window.navigator.userAgent);
+    const screenDelay =
+      window.innerWidth < 670 ||
+      (md.tablet() && window.innerWidth < 1200 && window.innerHeight > 800)
+        ? 0.3
+        : 1;
+    const animationAddedDelay =
+      window.innerWidth < 670 ||
+      (md.tablet() && window.innerWidth < 1200 && window.innerHeight > 800)
+        ? 0.8
+        : 0;
+    const screenPosition =
+      window.innerWidth < 670 ||
+      (md.tablet() && window.innerWidth < 1200 && window.innerHeight > 800)
+        ? -100
+        : 100;
 
     const tl = gsap.timeline();
     tl.fromTo(

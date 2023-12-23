@@ -6,16 +6,7 @@ export const PROJECTS_DATA = [
       'Personal website - portfolio with 4 pages, created using react. Implemented home page with interactive canvas and contact form on formspree. GreenSock animation platform and three.js also were used here.',
     githubLink: 'https://github.com/motorolla29/Motorolla29',
     demoLink: 'https://motorolla29.vercel.app/',
-    skills: [
-      'html',
-      'css',
-      'javascript',
-      'git',
-      'npm',
-      'react',
-      'gsap',
-      'three',
-    ],
+    skills: ['npm', 'react', 'gsap', 'three', 'formspree'],
     preview: 'm29',
   },
   {
@@ -45,7 +36,7 @@ export const PROJECTS_DATA = [
       'Restaurant menu written in React and application state management using Redux. Routing between main page and cart page. Fetching data from JSON-server based on Vercel.',
     githubLink: 'https://github.com/motorolla29/Resto',
     demoLink: 'https://resto-m29.vercel.app/',
-    skills: ['git', 'npm', 'react', 'redux'],
+    skills: ['npm', 'react', 'redux'],
     preview: 'resto',
   },
   {
@@ -65,7 +56,7 @@ export const PROJECTS_DATA = [
       'A notes application written on React with create-react-app library, you can delete and add notes and mark completed ones.',
     githubLink: 'https://github.com/motorolla29/todo-app',
     demoLink: 'https://todo-app-m29.vercel.app/',
-    skills: ['git', 'npm', 'react'],
+    skills: ['npm', 'react'],
     preview: 'todo-app',
   },
   {
@@ -75,7 +66,7 @@ export const PROJECTS_DATA = [
       'Another notes app, this time you can like your notes, add to favorites and filter a notes by liked.',
     githubLink: 'https://github.com/motorolla29/Draft-Note-App',
     demoLink: 'https://draft-note-app-m29.vercel.app/',
-    skills: ['git', 'npm', 'react'],
+    skills: ['npm', 'react'],
     preview: 'draft-note',
   },
   {
@@ -105,7 +96,7 @@ export const PROJECTS_DATA = [
       'Training in native JS, implementation of such things as a slider, timer, modal window, calculator and countdown to the end of the promo. Json-server used for training data fetching. Compiled with webpack.',
     githubLink: 'https://github.com/motorolla29/food',
     demoLink: 'https://diet-food-m29.vercel.app/',
-    skills: ['html', 'css', 'javascript', 'npm', 'git', 'webpack'],
+    skills: ['html', 'css', 'javascript', 'npm', 'webpack'],
     preview: 'diet-food',
   },
   {

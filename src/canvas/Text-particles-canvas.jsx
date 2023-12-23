@@ -37,7 +37,7 @@ class Particle {
 }
 
 class Effect {
-  constructor(context, width, height, text, fontSizeMultiplier, gap) {
+  constructor(context, width, height, text, fontSizeMultiplier, gap, rarity) {
     this.ctx = context;
     this.text = text;
     this.width = width;
@@ -52,6 +52,7 @@ class Effect {
 
     this.particles = [];
     this.gap = gap;
+    this.rarity = rarity;
     this.mouse = {
       radius: 2000,
       x: 0,
@@ -59,7 +60,7 @@ class Effect {
     };
   }
 
-  wrapText(particleSize, rarity) {
+  wrapText(particleSize) {
     this.ctx.font = this.fontSize + 'px Black Ops One';
     this.ctx.textAlign = 'center';
     this.ctx.textBaseline = 'middle';
@@ -71,7 +72,7 @@ class Effect {
       for (let x = 0; x < this.width; x += this.gap) {
         const index = (y * this.width + x) * 4;
         const alpha = pixels[index];
-        if (alpha > 0 && (this.fontSize < 250 || Math.random() < rarity)) {
+        if (alpha > 0 && (this.fontSize < 250 || Math.random() < this.rarity)) {
           this.particles.push(new Particle(this, x, y, particleSize));
         }
       }
@@ -98,8 +99,8 @@ const TextParticlesCanvas = ({
   text,
   fontSizeMultiplier = 1,
   gap = 10,
+  rarity = 0.16,
   particleSize = 1.5,
-  rarity = 0.35,
 }) => {
   const ref = useRef();
   let effect;
@@ -121,11 +122,12 @@ const TextParticlesCanvas = ({
       canvas.height,
       text,
       fontSizeMultiplier,
-      gap
+      gap,
+      rarity
     );
 
     document.fonts.ready.then(() => {
-      effect.wrapText(particleSize, rarity);
+      effect.wrapText(particleSize);
     });
 
     function animate() {
@@ -152,7 +154,7 @@ const TextParticlesCanvas = ({
         fontSizeMultiplier,
         gap
       );
-      effect.wrapText(particleSize, rarity);
+      effect.wrapText(particleSize);
     }, 250);
 
     window.addEventListener('mousemove', onMousemoveHandler);
