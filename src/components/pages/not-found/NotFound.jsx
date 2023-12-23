@@ -8,7 +8,8 @@ const NotFound = () => {
       text="Not Found"
       fontSizeMultiplier={0.4}
       gap={5}
-      particleSize={0.5}
+      particleSize={0.8}
+      rarity={0.3}
     />
   );
 };
