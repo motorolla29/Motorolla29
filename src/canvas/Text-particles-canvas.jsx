@@ -128,7 +128,6 @@ const TextParticlesCanvas = ({
     });
 
     function animate() {
-      console.log('animate');
       effect.update();
       effect.render();
       animationID = requestAnimationFrame(animate);
@@ -139,6 +138,18 @@ const TextParticlesCanvas = ({
     const onMousemoveHandler = (e) => {
       effect.mouse.x = e.x;
       effect.mouse.y = e.y;
+    };
+    const onTouchstartHandler = (e) => {
+      effect.mouse.x = e.changedTouches[0].clientX;
+      effect.mouse.y = e.changedTouches[0].clientY;
+    };
+    const onTouchmoveHandler = (e) => {
+      effect.mouse.x = e.targetTouches[0].clientX;
+      effect.mouse.y = e.targetTouches[0].clientY;
+    };
+    const onTouchendHandler = (e) => {
+      effect.mouse.x = 0;
+      effect.mouse.y = 0;
     };
 
     const onResizeDebouncedHandler = debounce(() => {
@@ -155,13 +166,19 @@ const TextParticlesCanvas = ({
       effect.wrapText(particleSize, rarity);
     }, 250);
 
-    window.addEventListener('mousemove', onMousemoveHandler);
-    window.addEventListener('resize', onResizeDebouncedHandler);
+    window.addEventListener('mousemove', onMousemoveHandler, false);
+    window.addEventListener('touchstart', onTouchstartHandler, false);
+    window.addEventListener('touchmove', onTouchmoveHandler, false);
+    window.addEventListener('touchend', onTouchendHandler, false);
+    window.addEventListener('resize', onResizeDebouncedHandler, false);
 
     return () => {
       cancelAnimationFrame(animationID);
-      window.removeEventListener('mousemove', onMousemoveHandler);
-      window.removeEventListener('resize', onResizeDebouncedHandler);
+      window.removeEventListener('touchstart', onTouchstartHandler, false);
+      window.removeEventListener('touchmove', onTouchmoveHandler, false);
+      window.removeEventListener('touchend', onTouchendHandler, false);
+      window.removeEventListener('mousemove', onMousemoveHandler, false);
+      window.removeEventListener('resize', onResizeDebouncedHandler, false);
     };
   });
 

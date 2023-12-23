@@ -28,8 +28,25 @@ const ParticlePhotoCanvas = (props) => {
     camera.bottom = wh / -2;
     camera.updateProjectionMatrix();
   };
-
-  const onMouseup = function () {
+  const onTouchstart = (e) => {
+    isMouseDown = true;
+    lastMousePos = {
+      x: e.changedTouches[0].clientX,
+      y: e.changedTouches[0].clientY,
+    };
+  };
+  const onTouchmove = (e) => {
+    if (isMouseDown) {
+      camera.position.x += (e.targetTouches[0].clientX - lastMousePos.x) / 100;
+      camera.position.y -= (e.targetTouches[0].clientY - lastMousePos.y) / 100;
+      camera.lookAt(centerVector);
+      lastMousePos = {
+        x: e.targetTouches[0].clientX,
+        y: e.targetTouches[0].clientY,
+      };
+    }
+  };
+  const onTouchend = (e) => {
     isMouseDown = false;
   };
 
@@ -45,6 +62,10 @@ const ParticlePhotoCanvas = (props) => {
       camera.lookAt(centerVector);
       lastMousePos = { x: e.clientX, y: e.clientY };
     }
+  };
+
+  const onMouseup = function () {
+    isMouseDown = false;
   };
 
   const drawTheMap = function (imagedata) {
@@ -142,6 +163,9 @@ const ParticlePhotoCanvas = (props) => {
       render();
     };
 
+    window.addEventListener('touchstart', onTouchstart, false);
+    window.addEventListener('touchmove', onTouchmove, false);
+    window.addEventListener('touchend', onTouchend, false);
     window.addEventListener('mousemove', onMousemove, false);
     window.addEventListener('mousedown', onMousedown, false);
     window.addEventListener('mouseup', onMouseup, false);
@@ -151,6 +175,9 @@ const ParticlePhotoCanvas = (props) => {
       animations.forEach((a) => {
         cancelAnimationFrame(a);
       });
+      window.removeEventListener('touchstart', onTouchstart, false);
+      window.removeEventListener('touchmove', onTouchmove, false);
+      window.removeEventListener('touchend', onTouchend, false);
       window.removeEventListener('mousemove', onMousemove, false);
       window.removeEventListener('mousedown', onMousedown, false);
       window.removeEventListener('mouseup', onMouseup, false);

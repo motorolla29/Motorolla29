@@ -17,11 +17,17 @@ const Pagination = ({ data, currentProject }) => {
       (md.tablet() && window.innerWidth < 1200 && window.innerHeight > 800)
         ? 15
         : -15;
+    const paginationDelay =
+      window.innerWidth < 670 ||
+      (md.tablet() && window.innerWidth < 1200 && window.innerHeight > 800)
+        ? 0
+        : 1;
     const tl = gsap.timeline();
     tl.fromTo(
       paginationRef.current,
       { opacity: 0, y: paginationY },
-      { opacity: 1, y: 0, duration: 1 }
+      { opacity: 1, y: 0, duration: 1.5 },
+      paginationDelay
     ).play();
   }, [data]);
 
