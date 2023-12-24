@@ -55,7 +55,7 @@ const Projects = ({
     const animationAddedDelay =
       window.innerWidth < 670 ||
       (md.tablet() && window.innerWidth < 1200 && window.innerHeight > 800)
-        ? 0.8
+        ? 1
         : 0;
     const screenPosition =
       window.innerWidth < 670 ||
@@ -130,10 +130,15 @@ const Projects = ({
             srcSet={`/project-screens/large-${preview}.png`}
             type="image/png"
           />
+          <source
+            media="(min-width: 500px)"
+            srcSet={`/project-screens/medium-${preview}.png`}
+            type="image/png"
+          />
           <img
             className="project_screen_picture"
             alt="project-screen"
-            src={`/project-screens/medium-${preview}.png`}
+            src={`/project-screens/small-${preview}.png`}
           />
         </picture>
       </div>

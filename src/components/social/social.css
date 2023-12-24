@@ -57,7 +57,7 @@
 
 @media (max-width: 670px) {
   .social {
-    margin-top: 20px;
+    margin: 5px 0;
   }
   .social__item {
     margin: 10px 5px;

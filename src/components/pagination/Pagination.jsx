@@ -13,8 +13,7 @@ const Pagination = ({ data, currentProject }) => {
   useEffect(() => {
     const md = new MobileDetect(window.navigator.userAgent);
     const paginationY =
-      window.innerWidth < 670 ||
-      (md.tablet() && window.innerWidth < 1200 && window.innerHeight > 800)
+      md.tablet() && window.innerWidth < 1200 && window.innerHeight > 800
         ? 15
         : -15;
     const paginationDelay =

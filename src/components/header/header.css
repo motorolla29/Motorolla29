@@ -77,18 +77,15 @@
 }
 
 @media (max-width: 670.4px) {
+  .logo,
+  .logo:hover {
+    background: url('../../images/Untitled-1.png');
+    background-size: 80px 40px;
+  }
   .header_container {
     padding-bottom: 0;
   }
   .header_nav {
     display: none;
-  }
-}
-
-@media (max-device-width: 670.4px) {
-  .logo,
-  .logo:hover {
-    background: url('../../images/Untitled-1.png');
-    background-size: 80px 40px;
   }
 }

@@ -78,7 +78,7 @@
 
 @media (max-width: 670px) {
   .pagination {
-    margin: 40px 0;
+    margin: 30px 0 15px 0;
   }
   .pagination_list {
     width: 325px;

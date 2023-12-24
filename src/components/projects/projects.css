@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'segoe script v2';
+  src: url('../../fonts/segoe-script-2-webfont.woff2') format('woff2'),
+    url('../../fonts/segoe-script-2-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .projects_container {
   margin-top: 50px;
   overflow: hidden;
@@ -17,7 +25,7 @@
   color: rgba(65, 65, 65, 0.5);
   font-weight: 600;
   font-size: 60px;
-  font-family: 'segoe script', Verdana, sans-serif;
+  font-family: 'segoe script v2', Verdana, sans-serif;
 }
 
 .project_subtitle {

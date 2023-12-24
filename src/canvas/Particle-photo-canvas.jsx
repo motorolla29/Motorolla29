@@ -1,9 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import MobileDetect from 'mobile-detect';
 import image from '../images/Layer1.png';
+import smallImage from '../images/Layer1small.png';
 
 const ParticlePhotoCanvas = (props) => {
   const ref = useRef();
+
+  const md = new MobileDetect(window.navigator.userAgent);
 
   const centerVector = new THREE.Vector3(0, 0, 0);
 
@@ -73,10 +77,13 @@ const ParticlePhotoCanvas = (props) => {
     const material = new THREE.PointsMaterial();
     material.vertexColors = true;
     material.transparent = true;
-    const heigthOffset = ww <= 500 ? 70 : 0;
-    const widthOffset = ww <= 500 ? 370 : 470;
+
+    const heigthOffset = md.mobile() ? 70 : 0;
+    const widthOffset = md.mobile() ? 300 : 470;
+    const widthDenominator = md.mobile() ? 2.5 : 1;
+
     for (let y = 0, y2 = imagedata.height; y < y2; y += 1) {
-      for (let x = 0, x2 = imagedata.width; x < x2; x += 1) {
+      for (let x = 0, x2 = imagedata.width / widthDenominator; x < x2; x += 1) {
         if (imagedata.data[x * 4 + y * 4 * imagedata.width] > 0) {
           const vertex = new THREE.Vector3();
           vertex.x = x - imagedata.width / 2 + widthOffset;
@@ -147,11 +154,11 @@ const ParticlePhotoCanvas = (props) => {
     camera.position.set(35, 0, 4);
     camera.lookAt(centerVector);
     scene.add(camera);
-    camera.zoom = `${ww <= 500 ? 0.8 : 1}`;
+    camera.zoom = 1;
     camera.updateProjectionMatrix();
 
     const img = new Image();
-    img.src = image;
+    img.src = md.mobile() ? smallImage : image;
     const c = document.createElement('canvas');
     const ctx = c.getContext('2d');
     img.onload = () => {
@@ -175,13 +182,13 @@ const ParticlePhotoCanvas = (props) => {
       animations.forEach((a) => {
         cancelAnimationFrame(a);
       });
-      window.removeEventListener('touchstart', onTouchstart, false);
-      window.removeEventListener('touchmove', onTouchmove, false);
-      window.removeEventListener('touchend', onTouchend, false);
-      window.removeEventListener('mousemove', onMousemove, false);
-      window.removeEventListener('mousedown', onMousedown, false);
-      window.removeEventListener('mouseup', onMouseup, false);
-      window.removeEventListener('resize', onResize, false);
+      window.removeEventListener('touchstart', onTouchstart);
+      window.removeEventListener('touchmove', onTouchmove);
+      window.removeEventListener('touchend', onTouchend);
+      window.removeEventListener('mousemove', onMousemove);
+      window.removeEventListener('mousedown', onMousedown);
+      window.removeEventListener('mouseup', onMouseup);
+      window.removeEventListener('resize', onResize);
     };
   });
 

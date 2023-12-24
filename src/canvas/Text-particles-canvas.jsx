@@ -174,11 +174,11 @@ const TextParticlesCanvas = ({
 
     return () => {
       cancelAnimationFrame(animationID);
-      window.removeEventListener('touchstart', onTouchstartHandler, false);
-      window.removeEventListener('touchmove', onTouchmoveHandler, false);
-      window.removeEventListener('touchend', onTouchendHandler, false);
-      window.removeEventListener('mousemove', onMousemoveHandler, false);
-      window.removeEventListener('resize', onResizeDebouncedHandler, false);
+      window.removeEventListener('touchstart', onTouchstartHandler);
+      window.removeEventListener('touchmove', onTouchmoveHandler);
+      window.removeEventListener('touchend', onTouchendHandler);
+      window.removeEventListener('mousemove', onMousemoveHandler);
+      window.removeEventListener('resize', onResizeDebouncedHandler);
     };
   });
 
