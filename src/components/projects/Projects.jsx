@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import preloadSmallImages from '../../utils/images-preloader';
 import MobileDetect from 'mobile-detect';
 
 import ProjectBtn from '../project-button/Project-button';
@@ -47,6 +48,9 @@ const Projects = ({
 
   useEffect(() => {
     const md = new MobileDetect(window.navigator.userAgent);
+    if (md.mobile()) {
+      preloadSmallImages();
+    }
     const screenDelay =
       window.innerWidth < 670 ||
       (md.tablet() && window.innerWidth < 1200 && window.innerHeight > 800)
