@@ -22,9 +22,9 @@ const ProjectsPage = () => {
     function handleGesure() {
       if (
         !(window.visualViewport.scale > 1) &&
-        touchendX < touchstartX - 20 &&
-        touchendY - touchstartY < 100 &&
-        touchendY - touchstartY > -100
+        touchendX < touchstartX - 50 &&
+        touchendY - touchstartY < 250 &&
+        touchendY - touchstartY > -250
       ) {
         if (!id) {
           return navigate(`/projects/2`);
@@ -36,9 +36,9 @@ const ProjectsPage = () => {
       }
       if (
         !(window.visualViewport.scale > 1) &&
-        touchendX > touchstartX + 20 &&
-        touchendY - touchstartY < 100 &&
-        touchendY - touchstartY > -100
+        touchendX > touchstartX + 50 &&
+        touchendY - touchstartY < 250 &&
+        touchendY - touchstartY > -250
       ) {
         return id > 1 ? navigate(`/projects/${--id}`) : null;
       }
