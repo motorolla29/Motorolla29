@@ -23,8 +23,8 @@ const ProjectsPage = () => {
       if (
         !(window.visualViewport.scale > 1) &&
         touchendX < touchstartX - 25 &&
-        touchendY - touchstartY < 25 &&
-        touchendY - touchstartY > -25
+        touchendY - touchstartY < 50 &&
+        touchendY - touchstartY > -50
       ) {
         if (!id) {
           return navigate(`/projects/2`);
@@ -37,8 +37,8 @@ const ProjectsPage = () => {
       if (
         !(window.visualViewport.scale > 1) &&
         touchendX > touchstartX + 25 &&
-        touchendY - touchstartY < 25 &&
-        touchendY - touchstartY > -25
+        touchendY - touchstartY < 50 &&
+        touchendY - touchstartY > -50
       ) {
         return id > 1 ? navigate(`/projects/${--id}`) : null;
       }
