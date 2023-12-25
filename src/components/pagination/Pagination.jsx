@@ -37,7 +37,11 @@ const Pagination = ({ data, currentProject }) => {
           to={`/projects/${
             currentProject.id > 1 ? currentProject.id - 1 : currentProject.id
           }`}
-          className="pagination_arrow_previous"
+          className={`pagination_arrow_previous${
+            currentProject.id === (1 || undefined)
+              ? ' pagination_arrow_disabled'
+              : ''
+          }`}
           title={`Previous`}
         >
           <IconArrowLeft className="arrow_icon"></IconArrowLeft>
@@ -78,7 +82,11 @@ const Pagination = ({ data, currentProject }) => {
               ? currentProject.id + 1
               : currentProject.id
           }`}
-          className="pagination_arrow_next"
+          className={`pagination_arrow_next${
+            currentProject.id === data.length
+              ? ' pagination_arrow_disabled'
+              : ''
+          }`}
           title={`Next`}
         >
           <IconArrowRigth className="arrow_icon"></IconArrowRigth>

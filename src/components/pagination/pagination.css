@@ -21,6 +21,7 @@
 
 .pagination_link.active {
   color: rgba(255, 255, 255, 0.25);
+  cursor: default;
 }
 .pagination_link:hover:not(.active) {
   color: rgba(255, 255, 255, 0.4);
@@ -29,6 +30,14 @@
 .pagination_arrow_previous {
   display: flex;
   align-items: center;
+}
+
+.pagination_arrow_disabled {
+  cursor: default;
+}
+.pagination_arrow_disabled .arrow_icon,
+.pagination_arrow_disabled .arrow_icon:hover {
+  fill: rgb(53, 53, 53, 0.25);
 }
 
 .arrow_icon {
