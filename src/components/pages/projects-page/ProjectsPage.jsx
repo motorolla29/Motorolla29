@@ -1,11 +1,11 @@
 import { useParams, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 import Pagination from '../../pagination/Pagination';
 import Projects from '../../projects/Projects';
 import { PROJECTS_DATA } from '../../../data/data';
 
 import './projects-page.css';
-import { useEffect } from 'react';
 
 const ProjectsPage = () => {
   let { id } = useParams();
@@ -16,23 +16,51 @@ const ProjectsPage = () => {
   useEffect(() => {
     let touchstartX = 0;
     let touchendX = 0;
+    let touchstartY = 0;
+    let touchendY = 0;
+
     function handleGesure() {
-      if (touchendX < touchstartX) {
-        return id > 1 ? navigate(`/projects/${--id}`) : null;
+      if (
+        touchendX < touchstartX - 50 &&
+        touchendY - touchstartY < 50 &&
+        touchendY - touchstartY > -50
+      ) {
+        if (!id) {
+          return navigate(`/projects/2`);
+        } else {
+          return id < PROJECTS_DATA.length
+            ? navigate(`/projects/${++id}`)
+            : null;
+        }
       }
-      if (touchendX > touchstartX) {
-        return id < PROJECTS_DATA.length ? navigate(`/projects/${++id}`) : null;
+      if (
+        touchendX > touchstartX + 50 &&
+        touchendY - touchstartY < 50 &&
+        touchendY - touchstartY > -50
+      ) {
+        return id > 1 ? navigate(`/projects/${--id}`) : null;
       }
     }
     const gesuredZone = document.querySelector('.projects_page_container');
 
-    const onTouchstartHandler = (event) => {
-      touchstartX = event.screenX;
+    const onTouchstartHandler = (e) => {
+      console.log(e.targetTouches[0].screenX);
+
+      if (e.targetTouches.length === 1) {
+        touchstartX = e.targetTouches[0].screenX;
+        touchstartY = e.targetTouches[0].screenY;
+      }
     };
 
-    const onTouchendHandler = (event) => {
-      touchendX = event.screenX;
-      handleGesure();
+    const onTouchendHandler = (e) => {
+      console.log(e.changedTouches[0].screenX);
+      console.log(e.targetTouches.length);
+
+      if (e.changedTouches.length === 1) {
+        touchendX = e.changedTouches[0].screenX;
+        touchendY = e.changedTouches[0].screenY;
+        handleGesure();
+      }
     };
 
     gesuredZone.addEventListener('touchstart', onTouchstartHandler, false);
