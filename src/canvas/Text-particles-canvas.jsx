@@ -60,7 +60,7 @@ class Effect {
   }
 
   wrapText(particleSize, rarity) {
-    this.ctx.font = this.fontSize + 'px Black Ops One';
+    this.ctx.font = this.fontSize + 'px Black Ops One, Tahoma, sans-serif';
     this.ctx.textAlign = 'center';
     this.ctx.textBaseline = 'middle';
     this.ctx.imageSmoothingEnabled = true;

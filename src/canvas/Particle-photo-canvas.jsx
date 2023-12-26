@@ -157,18 +157,20 @@ const ParticlePhotoCanvas = (props) => {
     camera.zoom = 1;
     camera.updateProjectionMatrix();
 
-    const img = new Image();
-    img.src = md.mobile() ? smallImage : image;
-    const c = document.createElement('canvas');
-    const ctx = c.getContext('2d');
-    img.onload = () => {
-      c.width = img.width;
-      c.height = img.height;
-      ctx.drawImage(img, 0, 0);
-      const imagedata = ctx.getImageData(0, 0, img.width, img.height);
-      drawTheMap(imagedata);
-      render();
-    };
+    document.fonts.ready.then(() => {
+      const img = new Image();
+      img.src = md.mobile() ? smallImage : image;
+      const c = document.createElement('canvas');
+      const ctx = c.getContext('2d');
+      img.onload = () => {
+        c.width = img.width;
+        c.height = img.height;
+        ctx.drawImage(img, 0, 0);
+        const imagedata = ctx.getImageData(0, 0, img.width, img.height);
+        drawTheMap(imagedata);
+        render();
+      };
+    });
 
     window.addEventListener('touchstart', onTouchstart, false);
     window.addEventListener('touchmove', onTouchmove, false);

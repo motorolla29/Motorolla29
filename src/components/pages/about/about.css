@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'segoe script v2';
+  src: url('/public/fonts/segoe-script-2-webfont.woff2') format('woff2'),
+    url('/public/fonts/segoe-script-2-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

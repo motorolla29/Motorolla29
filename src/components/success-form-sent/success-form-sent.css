@@ -5,7 +5,7 @@
 .contact_form_success_header {
   color: rgba(65, 65, 65, 0.5);
   font-size: 60px;
-  font-family: 'segoe print', Verdana, sans-serif;
+  font-family: 'segoe script v2', Verdana, sans-serif;
   font-weight: 100;
   user-select: none;
   text-align: center;
@@ -15,7 +15,7 @@
 .contact_form_success_message {
   width: 1000px;
   margin: 30px auto;
-  font-family: 'Black Ops One', Arial, sans-serif;
+  font-family: 'Black Ops One', Tahoma, sans-serif;
   font-size: 30px;
   line-height: 1.5;
   color: rgba(138, 138, 138, 0.5);
