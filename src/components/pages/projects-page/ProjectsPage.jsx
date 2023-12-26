@@ -60,12 +60,28 @@ const ProjectsPage = () => {
       }
     };
 
+    const onKeydownHandler = (e) => {
+      if (e.code === 'ArrowLeft') {
+        return id > 1 ? navigate(`/projects/${--id}`) : null;
+      } else if (e.code === 'ArrowRight') {
+        if (!id) {
+          return navigate(`/projects/2`);
+        } else {
+          return id < PROJECTS_DATA.length
+            ? navigate(`/projects/${++id}`)
+            : null;
+        }
+      }
+    };
+
     gesuredZone.addEventListener('touchstart', onTouchstartHandler, false);
     gesuredZone.addEventListener('touchend', onTouchendHandler, false);
+    document.addEventListener('keydown', onKeydownHandler, false);
 
     return () => {
       gesuredZone.removeEventListener('touchstart', onTouchstartHandler);
       gesuredZone.removeEventListener('touchend', onTouchendHandler);
+      document.removeEventListener('keydown', onKeydownHandler, false);
     };
   });
 
