@@ -76,7 +76,7 @@ export const PROJECTS_DATA = [
       'A game for guessing photos or photorealistic drawings. MVP pattern using OOP in JS. Fetching data with JSON-server. Unit-tests with "chai". Building with GULP.',
     githubLink: 'https://github.com/motorolla29/pixel-hunter',
     demoLink: 'https://pixel-hunter-m29.vercel.app/',
-    skills: ['javascript', 'git', 'npm', 'gulp', 'sass'],
+    skills: ['javascript', 'git', 'npm', 'node.js', 'chai', 'gulp', 'sass'],
     preview: 'pixel-hunter',
   },
   {
@@ -96,7 +96,7 @@ export const PROJECTS_DATA = [
       'Training in native JS, implementation of such things as a slider, timer, modal window, calculator and countdown to the end of the promo. Json-server used for training data fetching. Compiled with webpack.',
     githubLink: 'https://github.com/motorolla29/food',
     demoLink: 'https://diet-food-m29.vercel.app/',
-    skills: ['html', 'css', 'javascript', 'webpack'],
+    skills: ['html', 'css', 'javascript', 'node.js', 'webpack'],
     preview: 'diet-food',
   },
   {
@@ -127,7 +127,7 @@ export const PROJECTS_DATA = [
     githubLink:
       'https://github.com/motorolla29/-UBEREAT-2-web-pages-of-Food-Ordering-App',
     demoLink: 'https://ubereat-m29.vercel.app/',
-    skills: ['html', 'css'],
+    skills: ['html', 'css', 'figma'],
     preview: 'uber-eats',
   },
   {
@@ -137,7 +137,7 @@ export const PROJECTS_DATA = [
       'A simple landing web page, created on a training course, stylized in pure CSS with simple animations.',
     githubLink: 'https://github.com/motorolla29/PiedPiper',
     demoLink: 'https://pied-piper-m29.vercel.app/',
-    skills: ['html', 'css'],
+    skills: ['html', 'css', 'figma'],
     preview: 'pied-piper',
   },
 ];

@@ -14,6 +14,9 @@ import { ReactComponent as SassIcon } from '../images/skills-icons/sass.svg';
 import { ReactComponent as GreenSock } from '../images/skills-icons/greensock.svg';
 import { ReactComponent as JestIcon } from '../images/skills-icons/jest.svg';
 import { ReactComponent as FormspreeIcon } from '../images/skills-icons/formspree.svg';
+import { ReactComponent as FigmaIcon } from '../images/skills-icons/figma.svg';
+import { ReactComponent as NodeJsIcon } from '../images/skills-icons/node-js.svg';
+import { ReactComponent as ChaiIcon } from '../images/skills-icons/chai.svg';
 
 const getSkillLogo = (skill) => {
   switch (skill) {
@@ -49,6 +52,12 @@ const getSkillLogo = (skill) => {
       return <JestIcon key="gsap" />;
     case 'formspree':
       return <FormspreeIcon key="formspree" />;
+    case 'figma':
+      return <FigmaIcon key="figma" />;
+    case 'node.js':
+      return <NodeJsIcon key="node.js" />;
+    case 'chai':
+      return <ChaiIcon key="chai" />;
     default:
       break;
   }
