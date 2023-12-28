@@ -134,7 +134,7 @@ export const PROJECTS_DATA = [
     id: 14,
     title: 'Pied Piper',
     subtitle:
-      'A simple landing web page, created on a training course, stylized in pure CSS with simple animations.',
+      'A landing web page, created on a training course, stylized in pure CSS with simple effects.',
     githubLink: 'https://github.com/motorolla29/PiedPiper',
     demoLink: 'https://pied-piper-m29.vercel.app/',
     skills: ['html', 'css', 'figma'],
