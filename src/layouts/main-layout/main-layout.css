@@ -9,6 +9,11 @@
   flex-grow: 1;
 }
 
+.font_preload {
+  visibility: hidden;
+  font-family: 'segoe script v2';
+}
+
 @media (max-device-width: 1024px) {
   .content_wrapper {
     transition: height 0.5s ease;

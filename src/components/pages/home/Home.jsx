@@ -7,6 +7,7 @@ import './home.css';
 
 const Home = () => {
   const md = new MobileDetect(window.navigator.userAgent);
+
   return (
     <>
       {!md.mobile() && <WaveCanvas />}

@@ -1,10 +1,10 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useMemo } from 'react';
 import { gsap } from 'gsap';
-import preloadSmallImages from '../../utils/images-preloader';
 import MobileDetect from 'mobile-detect';
 
 import ProjectBtn from '../project-button/Project-button';
 import getSkillLogo from '../../utils/get-skill-logo';
+import { preloadImages } from '../../utils/images-preloader';
 
 import './projects.css';
 
@@ -40,6 +40,10 @@ const Projects = ({
   const btnsRef = useRef();
   const screenRef = useRef();
 
+  const md = useMemo(() => new MobileDetect(window.navigator.userAgent), []);
+
+  useMemo(() => (md.mobile() || md.tablet() ? preloadImages() : null), [md]);
+
   useEffect(() => {
     const currentColor = colorSet[Math.floor(Math.random() * colorSet.length)];
     btnsRef.current.style.setProperty(`--current-color`, `${currentColor}`);
@@ -47,10 +51,6 @@ const Projects = ({
   }, [title]);
 
   useEffect(() => {
-    const md = new MobileDetect(window.navigator.userAgent);
-    if (md.mobile()) {
-      preloadSmallImages();
-    }
     const screenDelay =
       window.innerWidth < 670 ||
       (md.tablet() && window.innerWidth < 1200 && window.innerHeight > 800)
@@ -103,7 +103,7 @@ const Projects = ({
     return () => {
       tl.revert();
     };
-  }, [title]);
+  }, [title, md]);
 
   return (
     <div className="projects_container">

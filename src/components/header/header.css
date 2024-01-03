@@ -15,12 +15,13 @@
   margin: 5px;
 }
 
-.logo_container a {
-  display: flex;
-  align-items: baseline;
+.logo_preload {
+  background: url('../../images/Untitled-1.png');
 }
 
 .logo {
+  display: flex;
+  align-items: baseline;
   width: 130px;
   height: 65px;
   background: url('../../images/Untitled-2.png');

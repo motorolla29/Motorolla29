@@ -21,6 +21,7 @@ const MainLayout = () => {
     <div className="content_wrapper" id="content_wrapper">
       <Header />
       <div className="content">
+        <div className="font_preload">font</div>
         <Outlet />
       </div>
       <Footer />
