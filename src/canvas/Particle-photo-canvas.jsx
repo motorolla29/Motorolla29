@@ -78,9 +78,9 @@ const ParticlePhotoCanvas = (props) => {
     material.vertexColors = true;
     material.transparent = true;
 
-    const heigthOffset = md.mobile() ? 70 : 0;
-    const widthOffset = md.mobile() ? 300 : 470;
-    const widthDenominator = md.mobile() ? 2.5 : 1;
+    const heigthOffset = md.mobile() && ww <= 500 ? 70 : 0;
+    const widthOffset = md.mobile() && ww <= 500 ? 300 : 470;
+    const widthDenominator = md.mobile() && ww <= 500 ? 2.5 : 1;
 
     for (let y = 0, y2 = imagedata.height; y < y2; y += 1) {
       for (let x = 0, x2 = imagedata.width / widthDenominator; x < x2; x += 1) {
