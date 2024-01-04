@@ -30,24 +30,30 @@ const mediumScreenImagesSources = [
   '/project-screens/medium-uber-eats.png',
   '/project-screens/medium-pied-piper.png ',
 ];
-// const largeScreenImagesSources = [
-//   '/project-screens/large-m29.png ',
-//   '/project-screens/large-six-cities.png ',
-//   '/project-screens/large-got-db.png ',
-//   '/project-screens/large-resto.png ',
-//   '/project-screens/large-star-db.png ',
-//   '/project-screens/large-todo-app.png ',
-//   '/project-screens/large-draft-note.png ',
-//   '/project-screens/large-pixel-hunter.png ',
-//   '/project-screens/large-keksobooking.png ',
-//   '/project-screens/large-diet-food.png ',
-//   '/project-screens/large-movie-db.png ',
-//   '/project-screens/large-veg-rain.png',
-//   '/project-screens/large-uber-eats.png',
-//   '/project-screens/large-pied-piper.png ',
-// ];
+const largeScreenImagesSources = [
+  '/project-screens/large-m29.png ',
+  '/project-screens/large-six-cities.png ',
+  '/project-screens/large-got-db.png ',
+  '/project-screens/large-resto.png ',
+  '/project-screens/large-star-db.png ',
+  '/project-screens/large-todo-app.png ',
+  '/project-screens/large-draft-note.png ',
+  '/project-screens/large-pixel-hunter.png ',
+  '/project-screens/large-keksobooking.png ',
+  '/project-screens/large-diet-food.png ',
+  '/project-screens/large-movie-db.png ',
+  '/project-screens/large-veg-rain.png',
+  '/project-screens/large-uber-eats.png',
+  '/project-screens/large-pied-piper.png ',
+];
 
 function preloadImages() {
+  if (window.innerWidth >= 1200) {
+    largeScreenImagesSources.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }
   if (window.innerWidth >= 500) {
     mediumScreenImagesSources.forEach((src) => {
       const img = new Image();

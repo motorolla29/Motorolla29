@@ -41,7 +41,6 @@ const Projects = ({
   const screenRef = useRef();
 
   const md = useMemo(() => new MobileDetect(window.navigator.userAgent), []);
-
   useMemo(() => (md.mobile() || md.tablet() ? preloadImages() : null), [md]);
 
   useEffect(() => {
@@ -129,6 +128,11 @@ const Projects = ({
       </div>
       <div ref={screenRef} className="project_screen">
         <picture>
+          <source
+            media="(min-width: 1200px)"
+            srcSet={`/project-screens/large-${preview}.png`}
+            type="image/png"
+          />
           <source
             media="(min-width: 500px)"
             srcSet={`/project-screens/medium-${preview}.png`}

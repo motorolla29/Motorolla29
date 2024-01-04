@@ -7,10 +7,11 @@ import './home.css';
 
 const Home = () => {
   const md = new MobileDetect(window.navigator.userAgent);
+  const browser = window.navigator.userAgent;
 
   return (
     <>
-      {!md.mobile() && <WaveCanvas />}
+      {!md.mobile() && !browser.includes('Firefox') && <WaveCanvas />}
       <TextParticlesCanvas text="M29" />
     </>
   );
