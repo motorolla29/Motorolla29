@@ -22,8 +22,6 @@ const ParticlePhotoCanvas = (props) => {
     lastMousePos,
     isMouseDown = false;
 
-  const mobileDevice = md.mobile() && ww <= 500;
-
   const onResize = function () {
     ww = window.innerWidth;
     wh = window.innerHeight;
@@ -80,9 +78,9 @@ const ParticlePhotoCanvas = (props) => {
     material.vertexColors = true;
     material.transparent = true;
 
-    const heigthOffset = mobileDevice ? 70 : 0;
-    const widthOffset = mobileDevice ? 300 : 470;
-    const widthDenominator = mobileDevice ? 2.5 : 1;
+    const heigthOffset = md.mobile() && ww <= 500 ? 70 : 0;
+    const widthOffset = md.mobile() && ww <= 500 ? 300 : 470;
+    const widthDenominator = md.mobile() && ww <= 500 ? 2.5 : 1;
 
     for (let y = 0, y2 = imagedata.height; y < y2; y += 1) {
       for (let x = 0, x2 = imagedata.width / widthDenominator; x < x2; x += 1) {
@@ -161,7 +159,7 @@ const ParticlePhotoCanvas = (props) => {
 
     document.fonts.ready.then(() => {
       const img = new Image();
-      img.src = mobileDevice ? smallImage : image;
+      img.src = md.mobile() ? smallImage : image;
       const c = document.createElement('canvas');
       const ctx = c.getContext('2d');
       img.onload = () => {

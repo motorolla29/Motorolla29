@@ -46,7 +46,7 @@ class Effect {
     this.fontSize = (this.width / 2.5) * fontSizeMultiplier;
     this.textX = this.width / 2;
     this.textY =
-      this.height < 750 || this.width > 1200
+      (this.height < 750 && this.width > 932) || this.width > 1200
         ? this.fontSize / 2 + 150
         : this.height / 1.7;
 
