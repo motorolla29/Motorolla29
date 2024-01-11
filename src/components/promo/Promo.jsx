@@ -1,3 +1,4 @@
+import { ReactComponent as DownloadIcon } from '../../images/icons/file-download.svg';
 import './promo.css';
 
 const Promo = () => {
@@ -17,6 +18,13 @@ const Promo = () => {
           solving complex problems. Like to create UI's which are beautiful,
           responsive, esthetically pleasing and comfortable to use.
         </p>
+        <div className="download_cv_container">
+          <a href="/Ryzhov_Vitaliy_CV.pdf" download className="download_cv">
+            <DownloadIcon className="download_cv_icon" />
+            <span className="download_cv_text">Download C.V.</span>
+            <span className="download_cv_info">(pdf 348kb)</span>
+          </a>
+        </div>
       </div>
     </div>
   );
