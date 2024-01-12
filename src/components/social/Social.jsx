@@ -3,7 +3,6 @@ import React from 'react';
 import { ReactComponent as MailIcon } from '../../images/icons/icons8-gmail.svg';
 import { ReactComponent as GithubIcon } from '../../images/icons/icons8-github.svg';
 import { ReactComponent as HabrIcon } from './../../images/icons/habr_logo_icon_248126.svg';
-import { ReactComponent as LinkedInIcon } from './../../images/icons/icons8-linkedin.svg';
 import { ReactComponent as VkIcon } from './../../images/icons/icons8-vk.svg';
 import { ReactComponent as TelegramIcon } from './../../images/icons/icons8-telegram.svg';
 
@@ -13,66 +12,55 @@ const Social = () => (
   <ul className="social">
     <li className="social__item">
       <a
-        href="."
+        href="https://github.com/motorolla29"
         target="_blank"
         rel="noopener noreferrer"
         className="social__link"
-        title="My Github"
+        title="GitHub"
       >
         <GithubIcon />
       </a>
     </li>
     <li className="social__item">
       <a
-        href="."
+        href="https://career.habr.com/motorolla29"
         target="_blank"
         rel="noopener noreferrer"
         className="social__link"
-        title="My Habr Career"
+        title="Habr"
       >
         <HabrIcon />
       </a>
     </li>
     <li className="social__item">
       <a
-        href="."
+        href="https://vk.com/esogmile"
         target="_blank"
         rel="noopener noreferrer"
         className="social__link"
-        title="My Linked In"
-      >
-        <LinkedInIcon />
-      </a>
-    </li>
-    <li className="social__item">
-      <a
-        href="."
-        target="_blank"
-        rel="noopener noreferrer"
-        className="social__link"
-        title="My Vk"
+        title="Vk"
       >
         <VkIcon />
       </a>
     </li>
     <li className="social__item">
       <a
-        href="."
+        href="https://t.me/motorolla29"
         target="_blank"
         rel="noopener noreferrer"
         className="social__link"
-        title="My Telegram"
+        title="Telegram"
       >
         <TelegramIcon />
       </a>
     </li>
     <li className="social__item">
       <a
-        href="."
+        href="mailto:eutyou@gmail.com"
         target="_blank"
         rel="noopener noreferrer"
         className="social__link"
-        title="Mail Me"
+        title="Mail"
       >
         <MailIcon />
       </a>

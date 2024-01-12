@@ -18,27 +18,26 @@
   height: 35px;
 }
 
-.social__link[title='My Github'] svg {
+.social__link[title='GitHub'] svg {
   fill: rgba(226, 249, 194, 0.5);
 }
-.social__link[title='My Habr Career'] svg {
+.social__link[title='Habr'] svg {
   fill: rgba(119, 162, 182, 0.5);
 }
-.social__link[title='My Linked In'] svg {
+.social__link[title='LinkedIn'] svg {
   fill: rgba(159, 226, 236, 0.5);
 }
-.social__link[title='My Vk'] svg {
+.social__link[title='Vk'] svg {
   fill: rgba(148, 195, 249, 0.5);
 }
-.social__link[title='My Telegram'] svg {
+.social__link[title='Telegram'] svg {
   fill: rgba(11, 162, 230, 0.5);
 }
-.social__link[title='Mail Me'] svg {
+.social__link[title='Mail'] svg {
   fill: rgba(98, 13, 13, 0.5);
 }
 
-.social__link:hover svg,
-.social__link:focus svg {
+.social__link:hover svg {
   fill: rgba(180, 180, 180, 0.3);
 }
 
