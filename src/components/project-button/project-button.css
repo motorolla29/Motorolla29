@@ -45,7 +45,7 @@
   height: 100%;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .sliding-button {
     font-size: 14px;
     padding: 14px 28px;

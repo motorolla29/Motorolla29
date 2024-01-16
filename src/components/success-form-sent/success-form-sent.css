@@ -1,4 +1,5 @@
 .contact_form_success {
+  flex-grow: 1;
   margin-top: 50px;
 }
 
@@ -22,7 +23,7 @@
   transition: width 0.5s ease-in-out, font-size 0.5s ease-in-out;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .contact_form_success_header {
     font-size: 45px;
   }
@@ -47,7 +48,7 @@
   }
 }
 
-@media (max-width: 670px) {
+@media (max-width: 750px) {
   .contact_form_success_header {
     font-size: 30px;
   }

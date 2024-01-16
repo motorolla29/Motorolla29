@@ -1,18 +1,13 @@
-.promo_container {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  overflow: hidden;
-  z-index: 0;
-  left: 250px;
-  top: 100px;
-  bottom: 50px;
-  width: 750px;
-  user-select: none;
-}
 .promo {
+  z-index: 0;
+  overflow: hidden;
+  user-select: none;
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
+  justify-content: center;
+  margin-left: 250px;
+  max-width: 750px;
   font-size: 100px;
 }
 
@@ -98,14 +93,14 @@
   margin: 0 0.1em;
 }
 
-.promo_container,
+.promo,
 .promo_greeting,
 .promo_name,
 .promo_role,
 .promo_details,
 .download_cv {
-  transition: left 0.5s ease, width 0.5s ease, font-size 0.5s ease,
-    line-height 0.5s ease, text-align 0.5s ease;
+  transition: margin-left 0.5s ease-out, max-width 0.5s ease-out,
+    font-size 0.5s ease-out, line-height 0.5s ease-out, text-align 0.5s ease-out;
 }
 
 @keyframes slidedown {
@@ -139,67 +134,53 @@
   }
 }
 
-@media (max-height: 850px) {
-  .promo_container {
-    width: 600px;
-  }
+@media (max-height: 870px) {
   .promo {
+    max-width: 600px;
     font-size: 80px;
   }
 }
 @media (max-height: 750px) {
-  .promo_container {
-    width: 700px;
-  }
   .promo {
+    max-width: 700px;
     font-size: 60px;
   }
 }
 
-@media (max-width: 1750px) {
-  .promo_container {
-    left: 200px;
-  }
-}
-@media (max-width: 1650px) {
-  .promo_container {
-    left: 100px;
-  }
-}
-@media (max-width: 1440px) {
-  .promo_container {
-    width: 600px;
-  }
+@media (max-width: 1800px) {
   .promo {
+    margin-left: 200px;
+  }
+}
+@media (max-width: 1700px) {
+  .promo {
+    margin-left: 100px;
+  }
+}
+@media (max-width: 1500px) {
+  .promo {
+    max-width: 600px;
     font-size: 80px;
   }
 }
 @media (max-width: 1200px) {
-  .promo_container {
-    left: 70px;
-    width: 530px;
-  }
   .promo {
+    max-width: 530px;
+    margin-left: 70px;
     font-size: 70px;
   }
 }
-@media (max-width: 970px) {
-  .promo_container {
-    top: 70px;
-    left: 30px;
-    width: 420px;
-  }
+@media (max-width: 900px) {
   .promo {
+    max-width: 420px;
+    margin-left: 30px;
     font-size: 55px;
   }
 }
-@media (max-width: 670px) {
-  .promo_container {
-    text-align: left;
-    bottom: 40px;
-    width: 270px;
-  }
+@media (max-width: 600px) {
   .promo {
+    text-align: left;
+    max-width: 270px;
     font-size: 60px;
   }
   .download_cv_container {
@@ -207,54 +188,44 @@
   }
 }
 @media (max-width: 500px) {
-  .promo_container {
-    width: 180px;
-  }
   .promo {
+    max-width: 180px;
     font-size: 40px;
   }
 }
 @media (max-width: 300px) {
-  .promo_container {
-    width: 150px;
-    left: 15px;
+  .promo {
+    max-width: 150px;
+    margin-left: 15px;
   }
 }
 
 @media (max-device-height: 650px) and (min-device-width: 900px) and (orientation: landscape) {
-  .promo_container {
-    width: 550px;
-  }
   .promo {
+    max-width: 550px;
     font-size: 40px;
   }
 }
 @media (max-device-height: 500px) and (min-device-width: 670px) and (orientation: landscape) {
-  .promo_container {
-    left: 15%;
+  .promo {
+    margin-left: 15%;
   }
 }
 @media (max-device-height: 500px) and (max-device-width: 350px) {
-  .promo_container {
-    width: 150px;
-  }
   .promo {
+    max-width: 150px;
     font-size: 30px;
   }
 }
 @media (max-device-height: 500px) and (orientation: landscape) {
-  .promo_container {
-    width: 400px;
-  }
   .promo {
+    max-width: 400px;
     font-size: 30px;
   }
 }
 @media (max-device-height: 350px) and (orientation: landscape) {
-  .promo_container {
-    width: 250px;
-  }
   .promo {
+    max-width: 250px;
     font-size: 25px;
   }
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { elastic as Menu } from 'react-burger-menu';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import './burger-menu.css';
 

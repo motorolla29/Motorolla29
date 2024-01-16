@@ -110,7 +110,7 @@ const StarsCanvas = (props) => {
     };
   });
 
-  return <canvas style={{ position: 'fixed' }} ref={ref} {...props} />;
+  return <canvas ref={ref} {...props} />;
 };
 
 export default StarsCanvas;

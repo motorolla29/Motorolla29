@@ -47,14 +47,14 @@
   transition: width 0.5s ease, height 0.5s ease, margin 0.5s ease;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 970px) {
   .social__link svg {
     width: 30px;
     height: 30px;
   }
 }
 
-@media (max-width: 670px) {
+@media (max-width: 750px) {
   .social {
     margin: 5px 0;
   }
