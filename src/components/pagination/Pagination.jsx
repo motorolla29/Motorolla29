@@ -25,7 +25,7 @@ const Pagination = ({ data, currentProject }) => {
     tl.fromTo(
       paginationRef.current,
       { opacity: 0, y: paginationY },
-      { opacity: 1, y: 0, duration: 1.5 },
+      { opacity: 1, y: 0, duration: 1 },
       paginationDelay
     ).play();
   }, [data]);

@@ -71,25 +71,25 @@ const Projects = ({
       titleRef.current,
       { opacity: 0, y: -10 },
       { opacity: 1, y: 0, duration: 0.5 },
-      animationAddedDelay
+      0.1 + animationAddedDelay
     )
       .fromTo(
         subtitleRef.current,
         { opacity: 0, y: -10 },
         { opacity: 1, y: 0, duration: 0.5 },
-        0.3 + animationAddedDelay
+        0.4 + animationAddedDelay
       )
       .fromTo(
         skillsRef.current,
         { opacity: 0, y: -10 },
         { opacity: 1, y: 0, duration: 0.5 },
-        0.6 + animationAddedDelay
+        0.7 + animationAddedDelay
       )
       .fromTo(
         btnsRef.current,
         { opacity: 0, y: -10, scale: 0.8 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.5 },
-        0.9 + animationAddedDelay
+        { opacity: 1, y: 0, scale: 1, duration: 1 },
+        1 + animationAddedDelay
       )
       .fromTo(
         screenRef.current,
