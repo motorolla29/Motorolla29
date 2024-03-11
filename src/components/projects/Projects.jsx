@@ -4,7 +4,7 @@ import MobileDetect from 'mobile-detect';
 
 import ProjectBtn from '../project-button/Project-button';
 import getSkillLogo from '../../utils/get-skill-logo';
-import { preloadImages } from '../../utils/images-preloader';
+import preloadImages from '../../utils/images-preloader';
 
 import './projects.css';
 
@@ -127,23 +127,11 @@ const Projects = ({
         </div>
       </div>
       <div ref={screenRef} className="project_screen">
-        <picture>
-          <source
-            media="(min-width: 1200px)"
-            srcSet={`/project-screens/large-${preview}.png`}
-            type="image/png"
-          />
-          <source
-            media="(min-width: 500px)"
-            srcSet={`/project-screens/medium-${preview}.png`}
-            type="image/png"
-          />
-          <img
-            className="project_screen_picture"
-            alt="project-screen"
-            src={`/project-screens/small-${preview}.png`}
-          />
-        </picture>
+        <img
+          className="project_screen_picture"
+          alt="project-screen"
+          src={`/project-screens/${preview}.webp`}
+        />
       </div>
     </div>
   );
