@@ -87,8 +87,8 @@ const Projects = ({
       )
       .fromTo(
         btnsRef.current,
-        { opacity: 0, y: -10, scale: 0.8 },
-        { opacity: 1, y: 0, scale: 1, duration: 1 },
+        { opacity: 0, y: -20 },
+        { opacity: 1, y: 0, duration: 1 },
         1 + animationAddedDelay
       )
       .fromTo(

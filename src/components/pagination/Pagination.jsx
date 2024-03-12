@@ -14,8 +14,8 @@ const Pagination = ({ data, currentProject }) => {
     const md = new MobileDetect(window.navigator.userAgent);
     const paginationY =
       md.tablet() && window.innerWidth < 1200 && window.innerHeight > 800
-        ? 15
-        : -15;
+        ? 20
+        : -20;
     const paginationDelay =
       window.innerWidth < 670 ||
       (md.tablet() && window.innerWidth < 1200 && window.innerHeight > 800)
