@@ -1,6 +1,5 @@
-import { useEffect, useRef, useMemo } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import MobileDetect from 'mobile-detect';
 
 import ProjectBtn from '../project-button/Project-button';
 import getSkillLogo from '../../utils/get-skill-logo';
@@ -40,8 +39,13 @@ const Projects = ({
   const btnsRef = useRef();
   const screenRef = useRef();
 
-  const md = useMemo(() => new MobileDetect(window.navigator.userAgent), []);
-  useMemo(() => (md.mobile() || md.tablet() ? preloadImages() : null), [md]);
+  const verticalOrientation =
+    window.innerWidth < 750 ||
+    (window.innerHeight > window.innerWidth && window.innerHeight > 1190);
+
+  if (verticalOrientation) {
+    preloadImages();
+  }
 
   useEffect(() => {
     const currentColor = colorSet[Math.floor(Math.random() * colorSet.length)];
@@ -50,21 +54,9 @@ const Projects = ({
   }, [title]);
 
   useEffect(() => {
-    const screenDelay =
-      window.innerWidth < 670 ||
-      (md.tablet() && window.innerWidth < 1200 && window.innerHeight > 800)
-        ? 0.3
-        : 1;
-    const animationAddedDelay =
-      window.innerWidth < 670 ||
-      (md.tablet() && window.innerWidth < 1200 && window.innerHeight > 800)
-        ? 1
-        : 0;
-    const screenPosition =
-      window.innerWidth < 670 ||
-      (md.tablet() && window.innerWidth < 1200 && window.innerHeight > 800)
-        ? -100
-        : 100;
+    const screenDelay = verticalOrientation ? 0.3 : 1;
+    const animationAddedDelay = verticalOrientation ? 1 : 0;
+    const screenPosition = verticalOrientation ? -100 : 100;
 
     const tl = gsap.timeline();
     tl.fromTo(
@@ -102,7 +94,7 @@ const Projects = ({
     return () => {
       tl.revert();
     };
-  }, [title, md]);
+  }, [title]);
 
   return (
     <div className="projects_container">

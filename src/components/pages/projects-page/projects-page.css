@@ -26,3 +26,9 @@
     justify-content: flex-end;
   }
 }
+
+@media only screen and (min-device-height: 1190px) and (orientation: portrait) {
+  .projects_page_container {
+    flex-direction: column-reverse;
+  }
+}

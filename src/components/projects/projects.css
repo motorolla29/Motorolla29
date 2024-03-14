@@ -152,10 +152,11 @@
   }
 }
 
-@media only screen and (min-device-width: 820px) and (max-device-width: 1368px) and (orientation: portrait) {
+@media only screen and (min-device-height: 1190px) and (orientation: portrait) {
   .projects_container {
     flex-direction: column-reverse;
     align-items: center;
+    margin-top: 0;
   }
   .project_info {
     width: 500px;
