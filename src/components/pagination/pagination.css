@@ -23,9 +23,11 @@
   color: rgba(255, 255, 255, 0.25);
   cursor: default;
 }
-.pagination_link:hover:not(.active) {
+
+.pagination_link:not(:focus):not(.active):hover {
   color: rgba(255, 255, 255, 0.4);
 }
+
 .pagination_arrow_next,
 .pagination_arrow_previous {
   display: flex;
