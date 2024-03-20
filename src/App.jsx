@@ -7,9 +7,9 @@ import Projects from './components/pages/projects-page/ProjectsPage';
 import Contacts from './components/pages/contacts/Contacts';
 import NotFound from './components/pages/not-found/NotFound';
 import StarsCanvas from './canvas/Stars-canvas';
+import BurgerMenu from './components/burger-menu/burger-menu';
 
 import './App.css';
-import BurgerMenu from './components/burger-menu/burger-menu';
 
 function App() {
   return (
