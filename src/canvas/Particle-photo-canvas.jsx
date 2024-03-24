@@ -11,7 +11,7 @@ const ParticlePhotoCanvas = (props) => {
 
   const centerVector = new THREE.Vector3(0, 0, 0);
 
-  let animations = [];
+  const animations = [];
 
   let renderer,
     scene,
