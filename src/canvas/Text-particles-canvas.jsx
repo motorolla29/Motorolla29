@@ -42,14 +42,16 @@ class Effect {
     this.text = text;
     this.width = width;
     this.height = height;
-    this.maxTextWidth = this.width * 0.8;
+    this.words = text.split(' ');
     this.fontSize = (this.width / 2.5) * fontSizeMultiplier;
+    this.lineHeight = this.fontSize * 0.8;
+    this.textHeight = this.words.length * this.lineHeight;
+    this.maxTextWidth = this.width * 0.8;
     this.textX = this.width / 2;
     this.textY =
       (this.height < 750 && this.width > 932) || this.width > 1200
         ? this.fontSize / 2 + 150
         : this.height / 1.7;
-
     this.particles = [];
     this.gap = gap;
     this.mouse = {
@@ -65,7 +67,17 @@ class Effect {
     this.ctx.textBaseline = 'middle';
     this.ctx.imageSmoothingEnabled = true;
     this.ctx.fillStyle = 'white';
-    this.ctx.fillText(this.text, this.textX, this.textY);
+
+    this.words.forEach((el, i) => {
+      this.ctx.fillText(
+        el,
+        this.textX,
+        this.words.length > 1
+          ? this.height / (this.words.length + 0.6) + i * this.lineHeight
+          : this.textY
+      );
+    });
+
     const pixels = this.ctx.getImageData(0, 0, this.width, this.height).data;
     for (let y = 0; y < this.height; y += this.gap) {
       for (let x = 0; x < this.width; x += this.gap) {

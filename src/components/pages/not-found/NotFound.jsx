@@ -6,7 +6,7 @@ const NotFound = () => {
   return (
     <TextParticlesCanvas
       text="Not Found"
-      fontSizeMultiplier={0.4}
+      fontSizeMultiplier={0.6}
       gap={5}
       particleSize={0.8}
       rarity={0.3}
