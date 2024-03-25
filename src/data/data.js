@@ -3,7 +3,7 @@ export const PROJECTS_DATA = [
     id: 1,
     title: 'M29',
     subtitle:
-      'Personal website - portfolio with 4 pages, created using react. Implemented home page with interactive canvas and contact form on formspree. GreenSock animation platform and three.js also were used here.',
+      'Personal portfolio website (the one you are located on) created using react. Implemented home and 404 page with interactive canvases and contact form on formspree. GreenSock animation platform and three.js also were used here.',
     githubLink: 'https://github.com/motorolla29/Motorolla29',
     demoLink: null,
     skills: ['css', 'react', 'gsap', 'three', 'formspree'],
