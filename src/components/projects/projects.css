@@ -139,6 +139,7 @@
   }
 
   .project_screen_picture {
+    padding-top: 15px;
     width: 300px;
   }
 }
