@@ -114,7 +114,7 @@ const Projects = ({
           </ul>
         </div>
         <div ref={btnsRef} className="project_buttons">
-          <ProjectBtn text="View" href={demoLink} />
+          {demoLink ? <ProjectBtn text="View" href={demoLink} /> : null}
           <ProjectBtn text="Code" href={githubLink} />
         </div>
       </div>
