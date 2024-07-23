@@ -17,6 +17,8 @@ import { ReactComponent as FormspreeIcon } from '../images/skills-icons/formspre
 import { ReactComponent as FigmaIcon } from '../images/skills-icons/figma.svg';
 import { ReactComponent as NodeJsIcon } from '../images/skills-icons/node-js.svg';
 import { ReactComponent as ChaiIcon } from '../images/skills-icons/chai.svg';
+import { ReactComponent as MaterialUiIcon } from '../images/skills-icons/material-ui.svg';
+import { ReactComponent as FramerMotionIcon } from '../images/skills-icons/framer-motion.svg';
 
 const getSkillLogo = (skill) => {
   switch (skill) {
@@ -58,6 +60,10 @@ const getSkillLogo = (skill) => {
       return <NodeJsIcon key="node.js" />;
     case 'chai':
       return <ChaiIcon key="chai" />;
+    case 'material-ui':
+      return <MaterialUiIcon key="material-ui" />;
+    case 'framer-motion':
+      return <FramerMotionIcon key="framer-motion" />;
     default:
       break;
   }
