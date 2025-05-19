@@ -19,6 +19,12 @@ import { ReactComponent as NodeJsIcon } from '../images/skills-icons/node-js.svg
 import { ReactComponent as ChaiIcon } from '../images/skills-icons/chai.svg';
 import { ReactComponent as MaterialUiIcon } from '../images/skills-icons/material-ui.svg';
 import { ReactComponent as FramerMotionIcon } from '../images/skills-icons/framer-motion.svg';
+import { ReactComponent as MondoDBIcon } from '../images/skills-icons/mongodb.svg';
+import { ReactComponent as PostgreSQLIcon } from '../images/skills-icons/postgresql.svg';
+import { ReactComponent as MaplibreIcon } from '../images/skills-icons/maplibre.svg';
+import { ReactComponent as StripeIcon } from '../images/skills-icons/stripe.svg';
+import { ReactComponent as MobXIcon } from '../images/skills-icons/mobx.svg';
+import { ReactComponent as VercelIcon } from '../images/skills-icons/vercel.svg';
 
 const getSkillLogo = (skill) => {
   switch (skill) {
@@ -64,6 +70,18 @@ const getSkillLogo = (skill) => {
       return <MaterialUiIcon key="material-ui" />;
     case 'framer-motion':
       return <FramerMotionIcon key="framer-motion" />;
+    case 'mongo-db':
+      return <MondoDBIcon key="mongo-db" />;
+    case 'postgre-sql':
+      return <PostgreSQLIcon key="postgre-sql" />;
+    case 'maplibre':
+      return <MaplibreIcon key="maplibre" />;
+    case 'stripe':
+      return <StripeIcon key="stripe" />;
+    case 'mobx':
+      return <MobXIcon key="mobx" />;
+    case 'vercel':
+      return <VercelIcon key="vercel" />;
     default:
       break;
   }

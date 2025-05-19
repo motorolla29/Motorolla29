@@ -1,23 +1,44 @@
 export const PROJECTS_DATA = [
   {
     id: 1,
+    title: 'Exotic Cakes',
+    subtitle:
+      'A full-stack online cake shop built with React, MobX, and MongoDB (via Mongoose). "Exotic Cakes" is an artisan bakery known for its uniquely shaped custom desserts. Includes Stripe integration for secure payments, with backend logic handled via Vercel serverless functions.',
+    githubLink: 'https://github.com/motorolla29/exotic-cakes',
+    demoLink: 'https://exotic-cakes.vercel.app/',
+    skills: [
+      'mongo-db',
+      'vercel',
+      'react',
+      'mobx',
+      'sass',
+      'maplibre',
+      'material-ui',
+      'framer-motion',
+    ],
+    preview: 'exotic-cakes',
+  },
+  {
+    id: 2,
     title: 'Exotic Beds',
     subtitle:
-      'A store of exotic furniture in the form of animals and more. The project was written in react using redux state manager. A database with store addresses for an interactive map and product photographs were made using AI (Dall-E 3, Midjourney v6, GPT-4o, GPT-3.5).',
+      'A full-stack online store built with React, Redux, Express.js, and PostgreSQL. Features include a global network of stores displayed on an interactive map, and product photos generated using AI tools such as DALL·E 3, Midjourney v6, GPT-3.5/4o.',
     githubLink: 'https://github.com/motorolla29/exotic-beds',
-    demoLink: 'https://exoticbeds.vercel.app/',
+    demoLink: 'https://exotic-beds.vercel.app/',
     skills: [
-      'sass',
+      'postgre-sql',
+      'node.js',
       'react',
       'redux',
-      'formspree',
+      'sass',
+      'maplibre',
       'material-ui',
       'framer-motion',
     ],
     preview: 'exotic-beds',
   },
   {
-    id: 2,
+    id: 3,
     title: 'M29',
     subtitle:
       'Personal portfolio website (the one you are located on) created using react. Implemented home and 404 page with interactive canvases and contact form on formspree. GreenSock animation platform and three.js also were used here.',
@@ -27,7 +48,7 @@ export const PROJECTS_DATA = [
     preview: 'm29',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Six Cities',
     subtitle:
       'Service for booking accommodation in 6 cities using the React - Redux bundle, covered with Jest tests with an implemented leaflet map and authorization with the ability to submit a review for the current property.',
@@ -37,7 +58,7 @@ export const PROJECTS_DATA = [
     preview: 'six-cities',
   },
   {
-    id: 4,
+    id: 5,
     title: 'Game of Thrones',
     subtitle:
       'Experience on using React class components with data received from the API based on https://anapioficeandfire.com/. Writing simple Unit tests with Jest also.',
@@ -47,7 +68,7 @@ export const PROJECTS_DATA = [
     preview: 'got-db',
   },
   {
-    id: 5,
+    id: 6,
     title: 'Resto',
     subtitle:
       'Restaurant menu written in React and application state management using Redux. Routing between main page and cart page. Fetching data from JSON-server based on Vercel.',
@@ -57,7 +78,7 @@ export const PROJECTS_DATA = [
     preview: 'resto',
   },
   {
-    id: 6,
+    id: 7,
     title: 'Star DB',
     subtitle:
       'Work aimed at studying react, class and functional components, hooks, routing, HOCs, react context, compose function, data fetch services with API based on https://swapi.dev/api and proptypes.',
@@ -67,7 +88,7 @@ export const PROJECTS_DATA = [
     preview: 'star-db',
   },
   {
-    id: 7,
+    id: 8,
     title: 'Todo App',
     subtitle:
       'A notes application written on React with create-react-app library, you can delete and add notes and mark completed ones.',
@@ -77,7 +98,7 @@ export const PROJECTS_DATA = [
     preview: 'todo-app',
   },
   {
-    id: 8,
+    id: 9,
     title: 'Draft Note App',
     subtitle:
       'Another notes app, this time you can like your notes, add to favorites and filter a notes by liked.',
@@ -87,7 +108,7 @@ export const PROJECTS_DATA = [
     preview: 'draft-note',
   },
   {
-    id: 9,
+    id: 10,
     title: 'Pixel Hunter',
     subtitle:
       'A game for guessing photos or photorealistic drawings. MVP pattern using OOP in JS. Fetching data with JSON-server. Unit-tests with "chai". Building with GULP.',
@@ -97,7 +118,7 @@ export const PROJECTS_DATA = [
     preview: 'pixel-hunter',
   },
   {
-    id: 10,
+    id: 11,
     title: 'Keksobooking',
     subtitle:
       'The project was created during the process of learning native JS, receiving data using XMLHttpRequest, sorting cards, form validation, drag and drop are implemented in this project.',
@@ -107,7 +128,7 @@ export const PROJECTS_DATA = [
     preview: 'keksobooking',
   },
   {
-    id: 11,
+    id: 12,
     title: 'Diet Food',
     subtitle:
       'Training in native JS, implementation of such things as a slider, timer, modal window, calculator and countdown to the end of the promo. Json-server used for training data fetching. Compiled with webpack.',
@@ -115,16 +136,6 @@ export const PROJECTS_DATA = [
     demoLink: 'https://diet-food-m29.vercel.app/',
     skills: ['html', 'css', 'javascript', 'node.js', 'webpack'],
     preview: 'diet-food',
-  },
-  {
-    id: 12,
-    title: 'Movie DB',
-    subtitle:
-      'First experience of creating a website using native JavaScript, a project with films, styles on the Sass preprocessor were used in the work',
-    githubLink: 'https://github.com/motorolla29/Movie-DB',
-    demoLink: 'https://movie-db-m29.vercel.app/',
-    skills: ['html', 'css', 'javascript', 'sass'],
-    preview: 'movie-db',
   },
   {
     id: 13,
