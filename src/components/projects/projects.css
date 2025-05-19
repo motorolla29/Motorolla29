@@ -17,6 +17,8 @@
   color: rgba(65, 65, 65, 0.5);
   font-weight: 600;
   font-size: 60px;
+  line-height: 1.2;
+  padding: 14px 0;
   font-family: 'segoe script v2', Verdana, sans-serif;
 }
 
@@ -56,7 +58,7 @@
 }
 
 .project_buttons {
-  margin-top: 20px;
+  margin: 20px 0 0 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -85,6 +87,7 @@
   }
   .project_title {
     font-size: 35px;
+    padding: 12px 0;
   }
   .project_subtitle {
     font-size: 15px;
@@ -110,6 +113,7 @@
   }
   .project_title {
     font-size: 30px;
+    padding: 10px 0;
   }
   .project_subtitle {
     font-size: 12px;
@@ -139,7 +143,7 @@
   }
 
   .project_screen_picture {
-    padding-top: 15px;
+    padding-top: 20px;
     width: 300px;
   }
 }

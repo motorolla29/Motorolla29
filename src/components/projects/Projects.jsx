@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 
 import ProjectBtn from '../project-button/Project-button';
@@ -39,21 +39,26 @@ const Projects = ({
   const btnsRef = useRef();
   const screenRef = useRef();
 
+  const [imagesPreloaded, setImagesPreloaded] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
+
   const verticalOrientation =
     window.innerWidth < 750 ||
     (window.innerHeight > window.innerWidth && window.innerHeight > 1190);
 
-  if (verticalOrientation) {
-    preloadImages();
-  }
+  useEffect(() => {
+    if (verticalOrientation && !imagesPreloaded) {
+      preloadImages();
+      setImagesPreloaded(true);
+    }
+  }, [verticalOrientation, imagesPreloaded]);
 
   useEffect(() => {
+    setImgLoaded(false);
     const currentColor = colorSet[Math.floor(Math.random() * colorSet.length)];
     btnsRef.current.style.setProperty(`--current-color`, `${currentColor}`);
     subtitleRef.current.style.setProperty(`--current-color`, `${currentColor}`);
-  }, [title]);
 
-  useEffect(() => {
     const screenDelay = verticalOrientation ? 0.3 : 1;
     const animationAddedDelay = verticalOrientation ? 1 : 0;
     const screenPosition = verticalOrientation ? -100 : 100;
@@ -122,7 +127,15 @@ const Projects = ({
         <img
           className="project_screen_picture"
           alt="project-screen"
+          src={`/project-screens/default.webp`}
+          style={{ display: imgLoaded ? 'none' : 'block' }}
+        />
+        <img
+          className="project_screen_picture"
+          alt="project-screen"
           src={`/project-screens/${preview}.webp`}
+          onLoad={() => setImgLoaded(true)}
+          style={{ display: imgLoaded ? 'block' : 'none' }}
         />
       </div>
     </div>

@@ -1,4 +1,6 @@
 const IMAGES_SOURCES = [
+  '/project-screens/exotic-cakes.webp ',
+  '/project-screens/exotic-beds.webp ',
   '/project-screens/m29.webp ',
   '/project-screens/six-cities.webp ',
   '/project-screens/got-db.webp ',
@@ -9,7 +11,6 @@ const IMAGES_SOURCES = [
   '/project-screens/pixel-hunter.webp ',
   '/project-screens/keksobooking.webp ',
   '/project-screens/diet-food.webp ',
-  '/project-screens/movie-db.webp ',
   '/project-screens/veg-rain.webp',
   '/project-screens/uber-eats.webp',
   '/project-screens/pied-piper.webp ',
