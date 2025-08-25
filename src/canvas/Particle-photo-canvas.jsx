@@ -78,8 +78,8 @@ const ParticlePhotoCanvas = (props) => {
     material.transparent = true;
 
     const heigthOffset = md.mobile() && ww <= 500 ? 100 : 0;
-    const widthOffset = md.mobile() && ww <= 500 ? 280 : 470;
-    const widthDenominator = md.mobile() && ww <= 500 ? 2.2 : 1;
+    const widthOffset = md.mobile() && ww <= 500 ? 320 : 470;
+    const widthDenominator = md.mobile() && ww <= 500 ? 2.4 : 1;
 
     for (let y = 0, y2 = imagedata.height; y < y2; y += 1) {
       for (let x = 0, x2 = imagedata.width / widthDenominator; x < x2; x += 1) {
@@ -159,14 +159,13 @@ const ParticlePhotoCanvas = (props) => {
     document.fonts.ready.then(() => {
       const img = new Image();
       img.src = image;
+      const c = document.createElement('canvas');
+      const ctx = c.getContext('2d');
       img.onload = () => {
-        const scale = md.mobile() ? 0.75 : 1;
-        const c = document.createElement('canvas');
-        c.width = img.width * scale;
-        c.height = img.height * scale;
-        const ctx = c.getContext('2d');
-        ctx.drawImage(img, 0, 0, c.width, c.height);
-        const imagedata = ctx.getImageData(0, 0, c.width, c.height);
+        c.width = img.width;
+        c.height = img.height;
+        ctx.drawImage(img, 0, 0);
+        const imagedata = ctx.getImageData(0, 0, img.width, img.height);
         drawTheMap(imagedata);
         render();
       };
