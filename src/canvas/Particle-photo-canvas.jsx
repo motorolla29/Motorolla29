@@ -77,7 +77,7 @@ const ParticlePhotoCanvas = (props) => {
     material.vertexColors = true;
     material.transparent = true;
 
-    const heigthOffset = md.mobile() && ww <= 500 ? 100 : 0;
+    const heigthOffset = md.mobile() && ww <= 500 ? 130 : 0;
     const widthOffset = md.mobile() && ww <= 500 ? 320 : 470;
     const widthDenominator = md.mobile() && ww <= 500 ? 2.4 : 1;
 
