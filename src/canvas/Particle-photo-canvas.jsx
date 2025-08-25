@@ -1,8 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import MobileDetect from 'mobile-detect';
 import image from '../images/Layer1.png';
-import smallImage from '../images/Layer1small.png';
 
 const ParticlePhotoCanvas = (props) => {
   const ref = useRef();
